@@ -1,34 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<br/>
 
-## Getting Started
+<p align="center"><a href="https://pi-frontend-six.vercel.app" style="font-size: 35px; font-weight: 500" target="_blank">Projeto Integrador</a></p>
 
-First, run the development server:
+<br/>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+<p align="center">
+    <img src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next JS" />
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="Typescript" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+    <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
+</p>
+
+## Sobre
+Uma aplicação para gestão de empresas por uma incubadora ou aceleradora, onde o responsável por uma incubadora ou aceleradora pode gerenciar as empresas que estão incubadas ou aceleradas por ela, e as empresas podem gerenciar seus profissionais e seus projetos.
+
+O objetivo é que a empresa consiga, em uma única plataforma, gerenciar seus colaboradores, compromissos, contratos, receitas e despesas. Em contrapartida, a incubadora ou aceleradora consegue gerenciar as empresas que estão incubadas ou aceleradas por ela de tal forma que consiga ter uma visão geral de todas as empresas e de cada uma individualmente.
+
+A aplicação contará com um chat entre as duas partes, onde a incubadora ou aceleradora pode se comunicar com as empresas e vice-versa, além das funcionalidades já mencionadas anteriormente.
+
+## :warning: Arquivos importantes
+.env
+-------------
+
+O arquivo ***.env*** deve ser criado com base no arquivo ***.env.example***.  
+  
+Esse arquivo deve estar na pasta raiz do projeto e conter obrigatóriamente as váriaveis de desenvolvimento abaixo:
+```cpp
+# Ainda não há variáveis obrigatórias
 ```
+>EM HIPÓTESE ALGUMA SUBA SEU ARQUIVO .ENV PARA O GITHUB
+  
+Caso seja necessário criar uma nova variável de desenvolvimento, observe que há um padrão:
+```javascript
+NEXT_PUBLIC_<NOME_DA_VARIAVEL>=VALOR
+```
+_Caso tenha criado uma variável, especifique isso em um Pull Request_  
+Para chamar sua variável faça como o código abaixo: 
+```javascript
+let myVar = process.env.NEXT_PUBLIC_MY_VAR
+```
+-----------------
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Requisitos
+- [x] Configurar .env ou .env.local
+- [x] Configurar backend Newhappen para testes finais
+- [x] Instalar dependências com `yarn` ou `npm install`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Rodando o frontend
+Execute o frontend com
+```javascript
+yarn dev
+```
