@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --color-bg: #0A0C0D;
@@ -27,7 +30,6 @@ body {
 .layout__main-content {
   flex-grow: 1;
 }
-
 
 .sidebar {
   width: 6em;
@@ -86,4 +88,29 @@ body {
 
 .sidebar__name {
   margin-left: 0.5rem;
+}
+
+.bg-login{
+  background-color: #26282A;
+  color: #f3f3f3;
+  text-align: center;
+  width: 400px; 
+  height: auto; 
+  border-radius: 10px;
+}
+
+.login-logo {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  margin: 0 auto; 
+
+}
+
+.wider-input {
+  width: 100%; 
+  padding: 13px; 
+  border-radius: 5px;
+  color: #505051;
 }
