@@ -45,8 +45,8 @@ body {
   width: max-content;
   display: flex;
   align-items: center;
-  justify-content: center; 
-  margin: 0 auto; 
+  justify-content: center;
+  margin: 0 auto;
   gap: 1rem;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
@@ -82,20 +82,20 @@ body {
   font-size: 1.5rem;
   display: flex;
   align-items: center;
-  justify-content: center; 
-  margin: 0 auto; 
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .sidebar__name {
   margin-left: 0.5rem;
 }
 
-.bg-login{
+.bg-login {
   background-color: #26282A;
   color: #f3f3f3;
   text-align: center;
-  width: 400px; 
-  height: auto; 
+  width: 400px;
+  height: auto;
   border-radius: 10px;
 }
 
@@ -103,14 +103,34 @@ body {
   width: max-content;
   display: flex;
   align-items: center;
-  justify-content: center; 
-  margin: 0 auto; 
+  justify-content: center;
+  margin: 0 auto;
 
 }
 
 .wider-input {
-  width: 100%; 
-  padding: 13px; 
+  width: 100%;
+  padding: 13px;
   border-radius: 5px;
   color: #505051;
+}
+
+h1 {
+  color: #fff;
+  font-size: x-large;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.color_linha {
+  background-color: #26282A;
+}
+
+.bg-card {
+  background-color: #26282A;
+  border-radius: 5px;
+}
+
+.color-card {
+  color: #828282;
 }
