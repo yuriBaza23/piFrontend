@@ -1,27 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --color-bg: #0A0C0D;
+  --color-border: #e5e7eb;
+  --color-sidebar-item: #101214;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #101214;
+  font-family: "Roboto", sans-serif;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+  position: relative;
+  gap: 2rem;
+}
+
+.layout__main-content {
+  flex-grow: 1;
+}
+
+.sidebar {
+  width: 6em;
+  height: 100%;
+  background-color: var(--color-bg);
+  padding: 1rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  overflow: hidden;
+  border-right: 2px solid #26282A;
+}
+
+.sidebar__top {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  margin: 0 auto; 
+  gap: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar__logo {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.sidebar__list {
+  list-style: none;
+}
+
+.sidebar__link {
+  display: inline-block;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #505051;
+  padding: 1rem 1rem;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.sidebar__link:active {
+  background-color: #101214;
+  width: auto;
+  height: auto;
+}
+
+.sidebar__icon {
+  display: inline-block;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  margin: 0 auto; 
+}
+
+.sidebar__name {
+  margin-left: 0.5rem;
+}
+
+.bg-login{
+  background-color: #26282A;
+  color: #f3f3f3;
+  text-align: center;
+  width: 400px; 
+  height: auto; 
+  border-radius: 10px;
+}
+
+.login-logo {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  margin: 0 auto; 
+
+}
+
+.wider-input {
+  width: 100%; 
+  padding: 13px; 
+  border-radius: 5px;
+  color: #505051;
 }
