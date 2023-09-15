@@ -19,7 +19,7 @@ export default function Home() {
                           <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">
                               <h4 className="font-bold text-large color-card">Empresa 1</h4>
                               <Spacer x={3} />
-                              <small className="text-default-500">Localização</small>
+                              <small className="text-default-500 color-card">Localização</small>
                           </CardHeader>
                           <CardBody className="overflow-visible py-2">
                           </CardBody>
