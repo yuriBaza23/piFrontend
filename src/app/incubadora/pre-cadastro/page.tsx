@@ -1,12 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 
-export default function Cadastro_Empresa() {
+export default function Pre_Cadastro() {
     const [nome, setNome] = useState("");
     const [email, setEmail] = useState("");
     const [nomeP, setNomeP] = useState("");
