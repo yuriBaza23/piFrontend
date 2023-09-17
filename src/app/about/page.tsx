@@ -1,4 +1,4 @@
-import Sidebar from "@/components/ui/Sidebar"
+import Sidebar from "@/components/ui/Sidebar";
 export default function About() {
   return (
     <div>
@@ -6,5 +6,5 @@ export default function About() {
         <Sidebar></Sidebar>
       </div>
     </div>
-  )
+  );
 }
