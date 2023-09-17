@@ -2,8 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { BsGrid } from "react-icons/bs";
 import { BsPeople } from "react-icons/bs";
-import { useRouter } from "next/router";
-
 
 const sidebarItems = [
     {

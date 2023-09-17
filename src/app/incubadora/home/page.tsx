@@ -4,7 +4,7 @@ import Sidebar from '@/components/ui/Sidebar';
 import { Card, CardHeader, CardBody, Spacer } from "@nextui-org/react";
 import { Separator } from "@/components/ui/separator";
 
-export default function Home() {
+export default function Home_i() {
     return (
       <div>
           <div className="layout">
@@ -13,7 +13,7 @@ export default function Home() {
                   <h1>Início</h1>
                   <Separator />
                   <div>
-                      <Spacer x={4} />
+                  <Spacer x={4} />
                       <Card className="py-4 bg-card">
                           <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">
                               <h4 className="font-bold text-large color-card">Empresa 1</h4>
