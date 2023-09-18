@@ -28,9 +28,9 @@ const NewProject = () => {
     <div>
       <button
         onClick={() => setModalOpen(true)}
-        className="btn btn-outline btn-info "
+        className="bg-yellow-600 text-white font-bold cursor-pointer px-6 py-2 hover:bg-yellow-700"
       >
-        Novo Projeto <AiOutlinePlus className="ml-2" size={15} />
+        Novo Projeto
       </button>
 
       <Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>
