@@ -131,6 +131,10 @@ h1 {
   border-radius: 5px;
 }
 
+.bg-card2{
+  background-color: #26282A;
+  border:none;
+}
 .color-card {
   color: #828282;
 }
