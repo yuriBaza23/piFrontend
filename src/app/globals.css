@@ -25,10 +25,12 @@ body {
   height: 100vh;
   position: relative;
   gap: 2rem;
+  width: 100%
 }
 
 .layout__main-content {
   flex-grow: 1;
+  width: 100%
 }
 
 .sidebar {
@@ -115,11 +117,22 @@ body {
   color: #505051;
 }
 
+p {
+  color: #fff;
+}
+
 h1 {
   color: #fff;
   font-size: x-large;
   padding-top: 1rem;
   margin-top: 1rem;
+}
+
+h2 {
+  color: #fff;
+  font-size: x-large;
+  /* padding-top: 1rem;
+  margin-top: 1rem; */
 }
 
 .color_linha {
