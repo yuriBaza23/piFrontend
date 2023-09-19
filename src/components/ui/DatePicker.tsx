@@ -13,6 +13,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { useBoardStore } from "@/store/BoardStore";
 
 export function DatePickerWithRange({
   className,
@@ -21,6 +22,18 @@ export function DatePickerWithRange({
     from: new Date(2022, 0, 20),
     to: addDays(new Date(2022, 0, 20), 20),
   });
+
+  const [
+    NewTaskStartDate,
+    setNewTaskStartDate,
+    newTaskDueDate,
+    setNewTaskDueDate,
+  ] = useBoardStore((state) => [
+    state.newTaskStartDate,
+    state.setNewTaskStartDate,
+    state.newTaskDueDate,
+    state.setNewTaskDueDate,
+  ]);
 
   return (
     <div className={cn("grid gap-2", className)}>
@@ -49,15 +62,25 @@ export function DatePickerWithRange({
             )}
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-auto p-0" align="start">
-          <Calendar
-            initialFocus
-            mode="range"
-            defaultMonth={date?.from}
-            selected={date}
-            onSelect={setDate}
-            numberOfMonths={2}
-          />
+        <PopoverContent className="w-full p-0" align="start">
+          <div className="justify-center w-full">
+            <Calendar
+              initialFocus
+              mode="range"
+              defaultMonth={new Date()}
+              selected={date}
+              onSelect={(dateRange) => {
+                if (dateRange) {
+                  setNewTaskStartDate(dateRange.from?.toString() ?? ""); // Armazena a data de início
+                  setNewTaskDueDate(dateRange.to?.toString() ?? ""); // Armazena a data final
+                }
+                console.log(NewTaskStartDate);
+                console.log(newTaskDueDate);
+                setDate(dateRange);
+              }}
+              numberOfMonths={2}
+            />
+          </div>
         </PopoverContent>
       </Popover>
     </div>

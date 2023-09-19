@@ -103,21 +103,24 @@ function Modal() {
                   />
                 </div>
 
-                <Dialog.Description className="mt-1 mb-2">
+                <Dialog.Description className="mt-2 mb-2">
                   Selecione a data de inicio e entrega da tarefa:
                 </Dialog.Description>
 
                 <DatePickerWithRange />
 
+                <Dialog.Description className="mt-3 mb-2">
+                  Status da tarefa:
+                </Dialog.Description>
                 <TaskTypeRadioGroup />
 
-                <div className="mt-2"></div>
+                <div className="mt-4" />
 
-                <div className="mt-4">
+                <div className="mt-6 flex justify-end">
                   <button
                     type="submit"
                     disabled={!newTaskTitle}
-                    className="inline-flex justify-center rounded-md border border-transparent bg-green-500 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-green-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:gb-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed"
+                    className="inline-flex justify-center rounded-md border border-transparent bg-green-600 px-4 py-2 text-sm font-medium text-gray-900 hover:bg-green-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:gb-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed"
                   >
                     Adicionar
                   </button>

@@ -15,6 +15,6 @@ interface Todo {
   title: string;
   description: string;
   status: string;
-  startDate: string;
-  dueDate: string;
+  startDate: string?;
+  dueDate: string?;
 }

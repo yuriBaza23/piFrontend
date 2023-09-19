@@ -8,26 +8,22 @@ const types = [
   {
     id: "backlog",
     name: "Backlog",
-    description: "",
-    color: "bg-gray-400",
+    color: "bg-[#5E6268]",
   },
   {
     id: "todo",
     name: "To Do",
-    description: "",
-    color: "bg-red-500",
+    color: "bg-red-600",
   },
   {
     id: "inprogress",
     name: "In Progress",
-    // description: "",
-    color: "bg-yellow-500",
+    color: "bg-yellow-600",
   },
   {
     id: "done",
     name: "Done",
-    // description: "",
-    color: "bg-green-500",
+    color: "bg-green-600",
   },
 ];
 
@@ -38,7 +34,7 @@ function TaskTypeRadioGroup() {
   ]);
 
   return (
-    <div className="w-full py-5">
+    <div className="w-full">
       <div className="mx-auto w-full max-w-md">
         <RadioGroup
           value={newTaskType}
@@ -54,11 +50,9 @@ function TaskTypeRadioGroup() {
                 className={({ active, checked }) =>
                   `${active ? "ring-1 ring-offset-1 ring-offset-gray-500" : ""}
                         ${
-                          checked
-                            ? `${type.color} bg-opacity-75 text-wh  ite`
-                            : "bg-[#414448]"
+                          checked ? `${type.color} text-white` : "bg-[#414448]"
                         } 
-                        relative flex cursor-pointer rounded-full px-4 py-2 shadow-md focus:outline-none overflow-hidden`
+                        relative flex cursor-pointer rounded-full px-4 py-2 shadow-md focus:outline-none overflow-hidden hover:bg-[#4E5155]`
                 }
               >
                 {({ checked }) => (
