@@ -17,7 +17,7 @@ function Header() {
   return (
     <header>
       <div className="flex flex-col md:flex-row items-center p-5 bg-[#26282a] justify-between rounded-b-2xl w-[calc(100w-6em-4rem)]">
-        <div className="flex items-center space-x-5 rounded-md  shadow-md flex-1 md:flex-initial">
+        <div className="flex items-center space-x-5 rounded-md flex-1 md:flex-initial">
           <h2>Projeto</h2>
         </div>
 
@@ -36,28 +36,8 @@ function Header() {
               Search
             </button>
           </form>
-          {/* Avatar
-          <Avatar
-            name="Gabriela Paola Sereniski"
-            round
-            size="50"
-            color="#0054d1"
-          /> */}
         </div>
       </div>
-
-      {/* <div className="flex items-center justify-center px-5 py-2 md:py-5">
-        <p className="flex items-center text-sm font-light pr-5 shadow-xl rounded-xl w-fit bg-white italic max-w-3xl text-[#0055d1] p-5 py-2">
-          <UserCircleIcon
-            className={`inline-block h-10 w-10 text-[#0055d1] mr-1 ${
-              loading && "animate-spin"
-            }`}
-          />
-          {suggestion && !loading
-            ? suggestion
-            : "GPT is summarising your tasks for the day..."}
-        </p>
-      </div> */}
     </header>
   );
 }

@@ -5,7 +5,9 @@ export default function About() {
     <div>
       <div className="layout">
         <Sidebar></Sidebar>
-        <NewProject />
+        <div className="w-[calc(100vw-6em-4rem)] flex justify-end">
+          <NewProject />
+        </div>
       </div>
     </div>
   );

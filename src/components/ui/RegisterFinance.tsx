@@ -5,21 +5,21 @@ import Modal from "./Modal";
 import { FormEventHandler, useState } from "react";
 import { useRouter } from "next/navigation";
 
-const NewProject = () => {
+const FewFinance = () => {
   const router = useRouter();
   const [modalOpen, setModalOpen] = useState<boolean>(false);
-  const [newProjectTitle, setNewProjectTitle] = useState<string>("");
-  const [newProjectDescription, setNewProjectDescription] =
+  const [newFinanceTitle, setNewFinanceTitle] = useState<string>("");
+  const [newFinanceDescription, setNewFinanceDescription] =
     useState<string>("");
 
   const handleSubmitNewTodo: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
-    // await addNewProject({
+    // await addNewFinance({
     //   id: uuidv4(),
-    //   text: newNewProjectTitle,
+    //   text: newNewFinanceTitle,
     // });
-    setNewProjectTitle("");
-    setNewProjectDescription("");
+    setNewFinanceTitle("");
+    setNewFinanceDescription("");
     setModalOpen(false);
     router.refresh();
   };
@@ -40,8 +40,8 @@ const NewProject = () => {
             <div className="flex flex-col">
               <div className="mb-2 w-full">
                 <input
-                  value={newProjectTitle}
-                  onChange={(e) => setNewProjectTitle(e.target.value)}
+                  value={newFinanceTitle}
+                  onChange={(e) => setNewFinanceTitle(e.target.value)}
                   type="text"
                   placeholder="Título do Projeto"
                   className="input input-bordered w-full"
@@ -49,8 +49,8 @@ const NewProject = () => {
               </div>
               <div className="mb-2">
                 <textarea
-                  value={newProjectDescription}
-                  onChange={(e) => setNewProjectDescription(e.target.value)}
+                  value={newFinanceDescription}
+                  onChange={(e) => setNewFinanceDescription(e.target.value)}
                   placeholder="Descrição do Projeto"
                   className="input input-bordered w-full"
                 />
@@ -68,4 +68,4 @@ const NewProject = () => {
   );
 };
 
-export default NewProject;
+export default FewFinance;

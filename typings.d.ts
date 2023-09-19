@@ -18,3 +18,5 @@ interface Todo {
   startDate: string?;
   dueDate: string?;
 }
+
+type Finance = "expanse" | "revenue";

@@ -13,23 +13,13 @@ function Modal() {
     setNewTaskTitle,
     newTaskDescription,
     setNewTaskDescription,
-    newTaskStartDate,
-    setNewTaskStartDate,
-    newTaskDueDate,
-    setNewTaskDueDate,
-    newTaskType,
     /*addTask,*/
   ] = useBoardStore((state) => [
     state.newTaskTitle,
     state.setNewTaskTitle,
     state.newTaskDescription,
     state.setNewTaskDescription,
-    state.newTaskStartDate,
-    state.setNewTaskStartDate,
-    state.newTaskDueDate,
-    state.setNewTaskDueDate,
     // state.addTask,
-    state.newTaskType,
   ]);
   const [isOpen, closeModal] = useModalStore((state) => [
     state.isOpen,
