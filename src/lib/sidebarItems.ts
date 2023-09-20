@@ -1,4 +1,4 @@
-import { BsBuildingAdd, BsHouseDoor } from "react-icons/bs";
+import { BsBuildingAdd, BsHouseDoor, BsClipboardX } from "react-icons/bs";
 
 export const sidebarIncItems = [
   {
@@ -10,5 +10,10 @@ export const sidebarIncItems = [
     name: "Adicionar empresa",
     href: "/incubadora/pre-cadastro",
     icon: BsBuildingAdd,
+  },
+  {
+    name: "Gerenciamento de advertências",
+    href: "/incubadora/advertencia",
+    icon: BsClipboardX,
   },
 ];
