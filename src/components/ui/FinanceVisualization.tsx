@@ -12,20 +12,25 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
+import { format } from "date-fns";
 
-const FinanceVisualization = () => {
-    const router = useRouter();
+export interface Finance {
+    id: string;
+    name: string;
+    type: "revenue" | "expense";
+    value: number;
+    createdAt: string;
+}
+
+interface RegisterFinanceProps {
+    data: Finance[];
+}
+
+const FinanceVisualization = ({ data }: RegisterFinanceProps) => {
     const [modalOpen, setModalOpen] = useState<boolean>(false);
-    const [newFinanceTitle, setNewFinanceTitle] = useState<string>("");
 
     const handleSubmitNewTodo: FormEventHandler<HTMLFormElement> = async (e) => {
-        e.preventDefault();
-        // await addNewFinance({
-        //   text: newNewFinanceTitle,
-        // });
-        setNewFinanceTitle("");
         setModalOpen(false);
-        router.refresh();
     };
 
     return (
@@ -47,26 +52,21 @@ const FinanceVisualization = () => {
                                 <TableCaption>Lista das finanças cadastradas</TableCaption>
                                 <TableHeader>
                                     <TableRow>
-                                        <TableHead >Data</TableHead>
+                                        <TableHead>Data</TableHead>
                                         <TableHead>Nome do item</TableHead>
-                                        <TableHead>Método de pagamento</TableHead>
+                                        <TableHead>Fluxo</TableHead>
                                         <TableHead className="text-right">Valor</TableHead>
                                     </TableRow>
                                 </TableHeader>
                                 <TableBody>
-                                    <TableRow>
-                                        <TableCell className="font-medium">19/09/23</TableCell>
-                                        <TableCell>Gelo</TableCell>
-                                        <TableCell>Pix</TableCell>
-                                        <TableCell className="text-right">R$15,00</TableCell>
-                                    </TableRow>
-
-                                    <TableRow>
-                                        <TableCell className="font-medium">18/09/23</TableCell>
-                                        <TableCell>Cartolina</TableCell>
-                                        <TableCell>Pix</TableCell>
-                                        <TableCell className="text-right">R$3,00</TableCell>
-                                    </TableRow>
+                                    { data && data.map((finance) => (
+                                        <TableRow key={finance.id}>
+                                            <TableCell className="font-medium">{format(new Date(finance.createdAt), 'dd/MM/yyyy')}</TableCell>
+                                            <TableCell>{finance.name}</TableCell>
+                                            <TableCell>{finance.type === 'revenue' ? 'Receita' : 'Despesa'}</TableCell>
+                                            <TableCell className="text-right">R${finance.value/100}</TableCell>
+                                        </TableRow>
+                                    )) }
                                 </TableBody>
                             </Table>
 

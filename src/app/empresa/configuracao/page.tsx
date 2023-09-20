@@ -8,6 +8,7 @@ import AddUserModal from '../../../components/ui/addUserModal';
 import UserManager, { IUser } from '../../../components/ui/userManager';
 import { useCallback, useEffect, useState } from 'react';
 import api from '../../../lib/api';
+import { sidebarCmpItems } from '../../../lib/sidebarItems';
 
 export default function Configuracoes_empresa() {
     const [myId, setMyId] = useState("");
@@ -38,7 +39,7 @@ export default function Configuracoes_empresa() {
     return (
         <div>
             <div className="layout">
-                <Sidebar/>
+                <Sidebar sidebarItems={sidebarCmpItems}/>
                 <div>
                     <div className='w-[calc(100vw-6em-4rem)] flex items-center justify-between mt-2'>
                         <h1 className='mt-0 mb-2'>Configuração</h1>
