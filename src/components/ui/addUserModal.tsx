@@ -24,9 +24,10 @@ const formSchema = z.object({
 
 interface AddUserModalProps {
   children: ReactNode;
+  getUsers: () => void;
 }
 
-export default function AddUserModal({ children }: AddUserModalProps) {
+export default function AddUserModal({ children, getUsers }: AddUserModalProps) {
   const [open, setOpen] = useState(false)
   const [cmpId, setCmpId] = useState("");
   const { toast } = useToast();
@@ -60,6 +61,7 @@ export default function AddUserModal({ children }: AddUserModalProps) {
         description: 'Sócio adicionado com sucesso'
       })
       setOpen(false)
+      getUsers()
       form.reset()
     } else {
       toast({

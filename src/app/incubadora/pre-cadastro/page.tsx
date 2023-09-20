@@ -1,8 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { Button } from "../../../components/ui/button";
+import { BsChevronLeft } from "react-icons/bs";
+import api from "../../../lib/api";
+import { useToast } from "../../../components/ui/use-toast";
+import { Loader2 } from "lucide-react";
 
 
 export default function Pre_Cadastro() {
@@ -11,12 +16,81 @@ export default function Pre_Cadastro() {
     const [nomeP, setNomeP] = useState("");
     const [emailP, setEmailP] = useState("");
     const [cnpj, setCnpj] = useState("");
-    const [error, setError] = useState("");
+    const [isDisabled, setIsDisabled] = useState(false);
+    const { toast } = useToast();
+    const [companyId, setCompanyId] = useState("");
+
+    async function createCompany(e: any) {
+        e.preventDefault();
+        if (!nome || !email || !nomeP || !emailP || !cnpj) {
+            toast({
+                title: "Campos vazios",
+                description: "Preencha todos os campos",
+                variant: 'destructive'
+            })
+            return;
+        }
+
+        if(cnpj.length !== 14) {
+            toast({
+                title: "CNPJ inválido",
+                description: "Verifique seu CNPJ e tente novamente",
+                variant: 'destructive'
+            })
+            return;
+        }
+
+        if(!email.includes('@') || !emailP.includes('@') || !email.includes('.') || !emailP.includes('.')) {
+            toast({
+                title: "E-mail inválido",
+                description: "Verifique seu e-mail e tente novamente",
+                variant: 'destructive'
+            })
+            return;
+        }
+
+        setIsDisabled(true);
+        const res = await api.post('/company', {
+            name: nome,
+            email,
+            cnpj,
+            hubId: companyId,
+            isPreCad: true,
+            ownerName: nomeP,
+            ownerEmail: emailP
+        })
+
+        if (res.status !== 200) {
+            toast({
+                title: "Erro",
+                description: "Tente novamente mais tarde",
+                variant: 'destructive'
+            })
+            return;
+        } else {
+            router.push("/incubadora/home");
+        }
+    }
+
+    const getMyIds = useCallback(async () => {
+        const myId = localStorage.getItem('@pi_myId');
+        if (myId) {
+            setCompanyId(myId)
+        }
+    }, [])
+
+    useEffect(() => {
+        getMyIds()
+    }, [getMyIds])
 
     const router = useRouter();
 
     return (
         <div className="grid place-items-center h-screen">
+            <Button className="absolute top-4 left-4" variant='outline' onClick={() => router.back()}>
+                <BsChevronLeft className='mr-2'/>
+                Voltar
+            </Button>
             <div className="shadow-lg p-5 rounded-lg bg-login">
                 <div className="login-logo">
                     <Image
@@ -58,15 +132,13 @@ export default function Pre_Cadastro() {
                         placeholder="E-mail do proprietário"
                         className="wider-input"
                     />
-                    <button className="bg-yellow-600 text-white font-bold cursor-pointer px-6 py-2 hover:bg-yellow-700">
+                    <Button
+                        onClick={(e) => createCompany(e)}
+                        disabled={isDisabled}
+                    >
+                        {isDisabled && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                         Cadastrar
-                    </button>
-                    {error && (
-                        <div className="bg-red-500 text-white w-fit text-sm py-1 px-3 rounded-md mt-6">
-                            {error}
-                        </div>
-                    )}
-
+                    </Button>
                 </form>
             </div>
         </div>

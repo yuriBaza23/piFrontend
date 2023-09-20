@@ -1,13 +1,40 @@
 "use client";
 
 import Sidebar from '@/components/ui/Sidebar';
-import { Card, CardHeader, CardBody, Spacer } from "@nextui-org/react";
+import { Spacer } from "@nextui-org/react";
 import { Separator } from "@/components/ui/separator";
 import { Button } from '@/components/ui/button';
 import AddUserModal from '../../../components/ui/addUserModal';
-import UserManagerModal from '../../../components/ui/userManagerModal';
+import UserManager, { IUser } from '../../../components/ui/userManager';
+import { useCallback, useEffect, useState } from 'react';
+import api from '../../../lib/api';
 
 export default function Configuracoes_empresa() {
+    const [myId, setMyId] = useState("");
+    const [cmpId, setCmpId] = useState("");
+    const [users, setUsers] = useState<IUser[]>([])
+
+    const getMyIds = useCallback(async () => {
+        const myId = localStorage.getItem('@pi_myId');
+        const cmpId = localStorage.getItem('@pi_cmpId');
+        if (myId && cmpId) {
+            setMyId(myId);
+            setCmpId(cmpId)
+        }
+    }, [])
+
+    const getUsers = useCallback(async () => {
+        if(cmpId) {
+          const res = await api.get(`company/${cmpId}`);
+          setUsers(res.data.users);
+        }
+    }, [cmpId])
+
+    useEffect(() => {
+        getMyIds()
+        getUsers()
+    }, [getMyIds, getUsers])
+
     return (
         <div>
             <div className="layout">
@@ -16,26 +43,15 @@ export default function Configuracoes_empresa() {
                     <div className='w-[calc(100vw-6em-4rem)] flex items-center justify-between mt-2'>
                         <h1 className='mt-0 mb-2'>Configuração</h1>
                         <div className='flex gap-4'>
-                            <UserManagerModal>
-                                <Button>Gerenciar sócios</Button>
-                            </UserManagerModal>
-                            <AddUserModal>
+                            <AddUserModal getUsers={getUsers}>
                                 <Button>Adicionar novo sócio</Button>
                             </AddUserModal>
                         </div>
                     </div>
                     <Separator />
-                    <div className='inline-block'>
+                    <div className='w-[calc(100vw-6em-4rem)] flex items-center justify-between mt-2'>
                         <Spacer x={4} />
-                        {/* <Card className="py-4 bg-card">
-                            <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">
-                                <h4 className="font-bold text-large color-card">Empresa 1</h4>
-                                <Spacer x={3} />
-                                <small className="text-default-500 color-card">Localização</small>
-                            </CardHeader>
-                            <CardBody className="overflow-visible py-2">
-                            </CardBody>
-                        </Card> */}
+                        <UserManager getUsers={getUsers} myId={myId} users={users}/>
                     </div>
                 </div>
             </div>
