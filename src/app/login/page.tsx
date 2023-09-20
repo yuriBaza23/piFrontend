@@ -1,18 +1,86 @@
 "use client";
 
-import Link from "next/link";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import api from "../../lib/api";
+import { useToast } from "../../components/ui/use-toast";
+import { Button } from "../../components/ui/button";
+import { Loader2 } from "lucide-react";
 
 export default function Login() {
+    const { toast } = useToast();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
-
+    const [isDisabled, setIsDisabled] = useState(true);
     const router = useRouter();
 
+    // Para simular autenticação
+    async function getUser(e: any) {
+        e.preventDefault();
+        if (!email || !password) {
+            toast({
+                title: "Campos vazios",
+                description: "Preencha todos os campos",
+                variant: 'destructive'
+            })
+            return;
+        }
 
+        setIsDisabled(true);
+        let res = await api.get("/user");
+        const user = res.data.find((user: any) => user.email === email);
+        if (!user) {
+            res = await api.get("/incubator");
+            const incubator = res.data.find((inc: any) => inc.email === email);
+            if (!incubator) {
+                toast({
+                    title: "Usuário não encontrado",
+                    description: "Verifique seus dados e tente novamente",
+                    variant: 'destructive'
+                })
+                return;
+            }
+
+            localStorage.setItem("@pi_myId", incubator.id);
+            localStorage.setItem("@pi_type", 'incubator');
+
+            router.push("/incubadora/home");
+            return;
+        }
+
+        localStorage.setItem("@pi_myId", user.id);
+        localStorage.setItem("@pi_cmpId", user.companyId);
+        localStorage.setItem("@pi_type", 'user');
+
+        if (user.isPreRegister) router.push(`/empresa/cadastro/${user.id}`);
+        else router.push("/empresa/configuracao");
+        return;
+    }
+
+    const isLogged = useCallback(async () => {
+        const myId = localStorage.getItem("@pi_myId");
+        const type = localStorage.getItem("@pi_type");
+        if (myId && type) {
+            if (type === 'user') {
+                const res = await api.get(`/user/${myId}`);
+                if (res.status === 200) {
+                    if (res.data.isPreRegister) router.push(`/empresa/cadastro/${myId}`);
+                    else router.push("/empresa/configuracao");
+                }
+            } else {
+                const res = await api.get(`/incubator/${myId}`);
+                if (res.status === 200) {
+                    router.push("/incubadora/home");
+                }
+            }
+        }
+    }, [router])
+
+    useEffect(() => {
+        setIsDisabled(false)
+        isLogged();
+    }, [isLogged])
 
     return (
         <div className="grid place-items-center h-screen">
@@ -39,18 +107,13 @@ export default function Login() {
                         placeholder="Senha"
                         className="wider-input"
                     />
-                    <button className="bg-yellow-600 text-white font-bold cursor-pointer px-6 py-2 hover:bg-yellow-700">
+                    <Button
+                        onClick={(e) => getUser(e)}
+                        disabled={isDisabled}
+                    >
+                        {isDisabled && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                         Login
-                    </button>
-                    {error && (
-                        <div className="bg-red-500 text-white w-fit text-sm py-1 px-3 rounded-md mt-6">
-                            {error}
-                        </div>
-                    )}
-
-                    <Link className="text-sm mt-3 text-right hover:text-yellow-600" href={"/"}>
-                        É uma incubadora? <span className="underline">Faça login</span>
-                    </Link>
+                    </Button>
                 </form>
             </div>
         </div>

@@ -3,10 +3,89 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --color-bg: #0A0C0D;
-  --color-border: #e5e7eb;
-  --color-sidebar-item: #101214;
+@layer base {
+  :root {
+    --color-bg: #0A0C0D;
+    --color-border: #e5e7eb;
+    --color-sidebar-item: #101214;
+
+    --background: 217.5 22.2% 7.1%;
+    --foreground: 210 40% 98%;
+ 
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+ 
+    --popover: 223 84% 5%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --card: 223 84% 5%;
+    --card-foreground: 210 40% 98%;
+ 
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+ 
+    --primary:150.7 100% 26.5%;
+    --primary-foreground: 0 0% 100%;
+ 
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --accent: 215 15% 15%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 215 15% 15%;
+    --destructive-foreground: 3 93% 63%;
+ 
+    --ring: 217 33% 17%;
+  }
+ 
+  .dark {
+    --color-bg: #0A0C0D;
+    --color-border: #e5e7eb;
+    --color-sidebar-item: #101214;
+
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+ 
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+ 
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+ 
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+ 
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+ 
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: ;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+ 
+    --ring: 217.2 32.6% 17.5%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.leaflet-pane {
+  z-index: 1;
 }
 
 * {
@@ -41,6 +120,9 @@ body {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
   overflow: hidden;
   border-right: 2px solid #26282A;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .sidebar__top {
@@ -115,6 +197,7 @@ body {
   padding: 13px;
   border-radius: 5px;
   color: #505051;
+  color: rgba(255, 255, 255, 0.80);
 }
 
 p {
