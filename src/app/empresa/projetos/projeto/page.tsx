@@ -1,3 +1,4 @@
+"use client";
 import Sidebar from "@/components/ui/Sidebar";
 // import NewProject from "@/components/ui/NewProject";
 import Board from "@/components/taskboard/Board";

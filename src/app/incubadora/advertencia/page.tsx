@@ -195,7 +195,7 @@ export default function DataTableDemo() {
                     <Separator />
                     <div>
                         <Spacer x={4} />
-                        <div className="w-full">
+                        <div className="w-full md:h-full">
                             <div className="flex items-center py-4">
                                 <Input
                                     placeholder="Filtrar advertências"
