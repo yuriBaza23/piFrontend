@@ -15,7 +15,9 @@ export default function Home_i() {
 
     const getCompany = useCallback(async (id: string) => {
         const res = await api.get(`company`);
-        setCompanies(res.data.filter((el: any) => el.hubId == id));
+        if(res.data) {
+            setCompanies(res.data.filter((el: any) => el.hubId == id));
+        }
     }, [])
 
     const getMyIds = useCallback(async () => {

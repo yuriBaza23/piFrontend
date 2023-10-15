@@ -1,12 +1,19 @@
 "use client";
 
-import { AiOutlinePlus } from "react-icons/ai";
 import Modal from "./Modal";
 import { FormEventHandler, useState } from "react";
 import { useRouter } from "next/navigation";
+import { useToast } from "./use-toast";
+import api from "../../lib/api";
 
-const NewProject = () => {
+interface NewProjectProps {
+  companyId?: string;
+}
+
+const NewProject = ({ companyId }: NewProjectProps) => {
   const router = useRouter();
+  const { toast } = useToast();
+
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [newProjectTitle, setNewProjectTitle] = useState<string>("");
   const [newProjectDescription, setNewProjectDescription] =
@@ -14,14 +21,28 @@ const NewProject = () => {
 
   const handleSubmitNewTodo: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
-    // await addNewProject({
-    //   id: uuidv4(),
-    //   text: newNewProjectTitle,
-    // });
-    setNewProjectTitle("");
-    setNewProjectDescription("");
-    setModalOpen(false);
-    router.refresh();
+    if(!newProjectTitle || !newProjectDescription) {
+      toast({
+        title: "Erro ao criar projeto",
+        description: "Preencha todos os campos",
+        variant: "destructive"
+      })
+      return;
+    }
+
+    const res = await api.post('project', {
+      name: newProjectTitle,
+      description: newProjectDescription,
+      companyID: companyId
+    });
+
+    if (res.status === 200) {
+      toast({
+        title: "Projeto criado com sucesso",
+        description: "Projeto criado com sucesso"
+      })
+      window.location.reload();
+    }
   };
 
   return (
@@ -37,7 +58,7 @@ const NewProject = () => {
         <form onSubmit={handleSubmitNewTodo}>
           <h3 className="font-bold text-lg">Criar novo projeto</h3>
           <div className="flex flex-col modal-action">
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-4">
               <div className="mb-2 w-full">
                 <input
                   value={newProjectTitle}
@@ -48,7 +69,7 @@ const NewProject = () => {
                 />
               </div>
               <div className="mb-2">
-                <textarea
+                <input
                   value={newProjectDescription}
                   onChange={(e) => setNewProjectDescription(e.target.value)}
                   placeholder="Descrição do Projeto"
