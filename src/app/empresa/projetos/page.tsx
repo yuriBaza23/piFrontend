@@ -36,7 +36,9 @@ export default function About() {
   const getProjects = useCallback(async () => {
     if (cmpId) {
       const res = await api.get(`project`);
-      setProjects(res.data.filter((project: any) => project.companyID == cmpId))
+      if(res.data) {
+        setProjects(res.data.filter((project: any) => project.companyID == cmpId))
+      }
     }
   }, [cmpId])
 

@@ -200,11 +200,13 @@ export default function DataTableDemo() {
 
     const getWarnings = useCallback(async (incId?: string) => {
         let res = await api.get(`warning`);
-        if(incId) setWarnings(res.data.filter((el: any) => el.incubatorID == incId));
-        else setWarnings(res.data.filter((el: any) => el.incubatorID == incubatorId));
-        res.data.forEach((el: any) => {
-            el.company = companies.find((cmp: any) => cmp.id == el.companyID)?.name
-        })
+        if(res.data) {
+            if(incId) setWarnings(res.data.filter((el: any) => el.incubatorID == incId));
+            else setWarnings(res.data.filter((el: any) => el.incubatorID == incubatorId));
+            res.data.forEach((el: any) => {
+                el.company = companies.find((cmp: any) => cmp.id == el.companyID)?.name
+            })
+        }
     }, [companies, incubatorId])
 
     const getMyIds = useCallback(async () => {
