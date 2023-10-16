@@ -25,9 +25,9 @@ export default function Configuracoes_empresa() {
     }, [])
 
     const getUsers = useCallback(async () => {
-        if(cmpId) {
-          const res = await api.get(`company/${cmpId}`);
-          setUsers(res.data.users);
+        if (cmpId) {
+            const res = await api.get(`company/${cmpId}`);
+            setUsers(res.data.users);
         }
     }, [cmpId])
 
@@ -39,20 +39,20 @@ export default function Configuracoes_empresa() {
     return (
         <div>
             <div className="layout">
-                <Sidebar sidebarItems={sidebarCmpItems}/>
-                <div>
-                    <div className='w-[calc(100vw-6em-4rem)] flex items-center justify-between mt-2'>
-                        <h1 className='mt-0 mb-2'>Configuração</h1>
-                        <div className='flex gap-4'>
+                <Sidebar sidebarItems={sidebarCmpItems} />
+                <div className="content">
+                    <div className="w-[calc(100vw-6em-4rem)] flex flex-col md:flex-row items-center justify-between mt-2 mx-auto">
+                        <h1 className="mt-0 mb-2">Configuração</h1>
+                        <div className="flex flex-wrap gap-2 sm:gap-4 md:gap-8">
                             <AddUserModal getUsers={getUsers}>
                                 <Button>Adicionar novo sócio</Button>
                             </AddUserModal>
                         </div>
                     </div>
                     <Separator />
-                    <div className='w-[calc(100vw-6em-4rem)] flex items-center justify-between mt-2'>
+                    <div className="w-[calc(100vw-6em-4rem)] flex items-center justify-between mt-2">
                         <Spacer x={4} />
-                        <UserManager getUsers={getUsers} myId={myId} users={users}/>
+                        <UserManager getUsers={getUsers} myId={myId} users={users} />
                     </div>
                 </div>
             </div>
