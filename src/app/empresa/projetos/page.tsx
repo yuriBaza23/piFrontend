@@ -55,9 +55,9 @@ export default function About() {
       <div className="layout">
         <Sidebar sidebarItems={sidebarCmpItems} />
         <div>
-          <div className="w-[calc(100vw-6em-4rem)] flex items-center justify-between mt-2 pb-2">
+          <div className="w-[calc(100vw-6em-4rem)] flex flex-col md:flex-row items-center justify-between mt-2">
             <h1 className='mt-0 mb-2'>Gerenciamento</h1>
-            <div className='flex gap-4'>
+            <div className='flex flex-wrap gap-2 sm:gap-4 md:gap-8'>
               <RegisterFinance companyId={cmpId}/>
               <FinanceVisualization data={finances}/>
               <NewProject companyId={cmpId}/>
