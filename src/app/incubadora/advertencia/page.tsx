@@ -1,12 +1,9 @@
 "use client";
 
-import * as React from "react";
 import {
-    CaretSortIcon,
     ChevronDownIcon,
 } from "@radix-ui/react-icons";
 import {
-    ColumnDef,
     ColumnFiltersState,
     SortingState,
     VisibilityState,
@@ -19,14 +16,10 @@ import {
 } from "@tanstack/react-table";
 
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
     DropdownMenu,
     DropdownMenuCheckboxItem,
     DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
@@ -42,6 +35,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import Sidebar from "@/components/ui/Sidebar";
 import { Spacer } from "@nextui-org/react";
+import { useState, useEffect, useCallback } from "react";
 
 import {
     Dialog,
@@ -55,120 +49,39 @@ import {
 
 import { Label } from "@/components/ui/label";
 import { IoMdAddCircleOutline } from "react-icons/io";
+import { sidebarIncItems } from "../../../lib/sidebarItems";
+import { useToast } from "../../../components/ui/use-toast";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../../components/ui/select";
+import api from "../../../lib/api";
+import { Loader2 } from "lucide-react";
+import { columns } from "./columns";
 
-
-const data: Payment[] = [
-    {
-        id: "m5gr84i9",
-        data: "20/05/23",
-        empresa: "Empresa 1",
-        motivo: "Não compriu tarefa A.",
-    },
-    {
-        id: "3u1reuv4",
-        data: "15/02/23",
-        empresa: "Empresa 1",
-        motivo: "Não compriu tarefa B.",
-    },
-    {
-        id: "derv1ws0",
-        data: "30/08/23",
-        empresa: "Empresa 2",
-        motivo: "Não compriu tarefa C.",
-    },
-    {
-        id: "5kma53ae",
-        data: "20/05/23",
-        empresa: "Empresa 3",
-        motivo: "Não compriu tarefa D.",
-    },
-    {
-        id: "bhqecj4p",
-        data: "20/05/23",
-        empresa: "Empresa 4",
-        motivo: "Não compriu tarefa E.",
-    },
-]
-
-export type Payment = {
+export type Warning = {
     id: string
-    data: string
-    empresa: string
-    motivo: string
+    title: string
+    company: string
+    content: string
 }
 
-export const columns: ColumnDef<Payment>[] = [
-    {
-
-        id: "select",
-        header: ({ table }) => (
-            <Checkbox
-                checked={table.getIsAllPageRowsSelected()}
-                onCheckedChange={(value: boolean) => table.toggleAllPageRowsSelected(!!value)}
-                aria-label="Selecione todos"
-            />
-        ),
-        cell: ({ row }) => (
-            <Checkbox
-                checked={row.getIsSelected()}
-                onCheckedChange={(value: boolean) => row.toggleSelected(!!value)}
-                aria-label="Selecione a linha"
-            />
-        ),
-        enableSorting: false,
-        enableHiding: false,
-    },
-    {
-        accessorKey: "data",
-        header: "Data",
-        cell: ({ row }) => (
-            <div className="capitalize">{row.getValue("data")}</div>
-        ),
-    },
-    {
-        accessorKey: "empresa",
-        header: ({ column }) => {
-            return (
-
-                <Button
-                    variant="ghost"
-                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-                >
-                    Empresa
-                    <CaretSortIcon className="ml-2 h-4 w-4" />
-                </Button>
-            )
-        },
-        cell: ({ row }) => <div className="lowercase">{row.getValue("empresa")}</div>,
-    },
-    {
-        accessorKey: "motivo",
-        header: ({ column }) => {
-            return (
-
-                <Button
-                    variant="ghost"
-                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-                >
-                    Motivo
-                    <CaretSortIcon className="ml-2 h-4 w-4" />
-                </Button>
-            )
-        },
-    },
-]
-
 export default function DataTableDemo() {
-    const [sorting, setSorting] = React.useState<SortingState>([])
-    const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
+    const [incubatorId, setIncubatorId] = useState("")
+    const [description, setDescription] = useState("")
+    const [isDisabled, setIsDisabled] = useState(false);
+    const [cmp, setCmp] = useState("")
+    const [companies, setCompanies] = useState<any[]>([])
+    const [warnings, setWarnings] = useState<any[]>([])
+    const [open, setOpen] = useState(false)
+    const { toast } = useToast();
+    const [sorting, setSorting] = useState<SortingState>([])
+    const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>(
         []
     )
     const [columnVisibility, setColumnVisibility] =
-        React.useState<VisibilityState>({})
-    const [rowSelection, setRowSelection] = React.useState({})
+        useState<VisibilityState>({})
+    const [rowSelection, setRowSelection] = useState({})
 
     const table = useReactTable({
-        data,
+        data: warnings,
         columns,
         onSortingChange: setSorting,
         onColumnFiltersChange: setColumnFilters,
@@ -186,22 +99,84 @@ export default function DataTableDemo() {
         },
     })
 
+    const addWarning = useCallback(async () => {
+        setIsDisabled(true)
+        if(!cmp || !description) {
+            toast({
+                title: 'Preencha todos os campos',
+                variant: 'destructive'
+            })
+            setIsDisabled(false)
+            return
+        }
+
+        const res = await api.post(`warning`, {
+            title: 'Advertência',
+            content: description,
+            companyID: cmp,
+            incubatorID: incubatorId
+        })
+        if(res.status == 200) {
+            toast({
+                title: 'Advertência cadastrada com sucesso'
+            })
+        } else {
+            toast({
+                title: 'Erro ao cadastrar advertência',
+                variant: 'destructive'
+            })
+        }
+        setOpen(false)
+        setIsDisabled(false)
+    }, [cmp, description, incubatorId, toast])
+
+    const getCompany = useCallback(async (id: string) => {
+        const res = await api.get(`company`);
+        setCompanies(res.data.filter((el: any) => el.hubId == id));
+    }, [])
+
+    const getWarnings = useCallback(async (incId?: string) => {
+        let res = await api.get(`warning`);
+        if(res.data) {
+            if(incId) setWarnings(res.data.filter((el: any) => el.incubatorID == incId));
+            else setWarnings(res.data.filter((el: any) => el.incubatorID == incubatorId));
+            res.data.forEach((el: any) => {
+                el.company = companies.find((cmp: any) => cmp.id == el.companyID)?.name
+            })
+        }
+    }, [companies, incubatorId])
+
+    const getMyIds = useCallback(async () => {
+        const myId = localStorage.getItem('@pi_myId');
+        if (myId) {
+            setIncubatorId(myId)
+            getCompany(myId)
+            getWarnings(myId)
+        }
+    }, [getCompany, getWarnings])
+
+    useEffect(() => {
+        getMyIds()
+    }, [getMyIds])
+
     return (
         <div>
             <div className="layout">
-                <Sidebar></Sidebar>
+                <Sidebar sidebarItems={sidebarIncItems}/>
                 <div>
-                    <h1>Gerenciar advertências</h1>
+                    <div className='w-[calc(100vw-6em-4rem)] flex items-center justify-between mt-2'>
+                        <h1>Gerenciar advertências</h1>
+                    </div>
                     <Separator />
                     <div>
                         <Spacer x={4} />
                         <div className="w-full md:h-full">
                             <div className="flex items-center py-4">
                                 <Input
-                                    placeholder="Filtrar advertências"
-                                    value={(table.getColumn("empresa")?.getFilterValue() as string) ?? ""}
+                                    placeholder="Filtrar advertências por empresa"
+                                    value={(table.getColumn("company")?.getFilterValue() as string) ?? ""}
                                     onChange={(event) =>
-                                        table.getColumn("empresa")?.setFilterValue(event.target.value)
+                                        table.getColumn("company")?.setFilterValue(event.target.value)
                                     }
                                     className="max-w-sm"
                                 />
@@ -213,7 +188,7 @@ export default function DataTableDemo() {
                                         </Button>
                                     </DropdownMenuTrigger>
                                     <Spacer x={2} />
-                                    <Dialog>
+                                    <Dialog open={open} onOpenChange={() => setOpen(!open)}>
                                         <DialogTrigger asChild>
                                             <Button variant="teste"><IoMdAddCircleOutline className="mr-2 h-4 w-4" />Advertência</Button>
                                         </DialogTrigger>
@@ -229,23 +204,36 @@ export default function DataTableDemo() {
                                                     <Label htmlFor="empresa" className="text-right">
                                                         Empresa
                                                     </Label>
-                                                    <Input id="empresa" className="col-span-3" />
-                                                </div>
-                                                <div className="grid grid-cols-4 items-center gap-4">
-                                                    <Label htmlFor="date" className="text-right">
-                                                        Data
-                                                    </Label>
-                                                    <Input id="date" value="19/09/23" className="col-span-3" />
+                                                    <Select 
+                                                        onValueChange={(value: string) => {
+                                                            setCmp(value)
+                                                        }}
+                                                    >
+                                                        <SelectTrigger id="empresa" className="col-span-3">
+                                                            <SelectValue placeholder="Selecione a empresa"/>
+                                                        </SelectTrigger>
+                                                        <SelectContent>
+                                                            {companies.map((company) => (
+                                                                <SelectItem key={company.id} value={company.id}>{company.name}</SelectItem>
+                                                            ))}
+                                                        </SelectContent>
+                                                    </Select>
                                                 </div>
                                                 <div className="grid grid-cols-4 items-center gap-4">
                                                     <Label htmlFor="motivo" className="text-right">
                                                         Motivo
                                                     </Label>
-                                                    <Input id="motivo" className="col-span-3" />
+                                                    <Input id="motivo" className="col-span-3" onChange={(e) => setDescription(e.target.value)}/>
                                                 </div>
                                             </div>
                                             <DialogFooter>
-                                                <Button type="submit">Cadastrar</Button>
+                                                <Button
+                                                    onClick={() => addWarning()}
+                                                    disabled={isDisabled}
+                                                >
+                                                    {isDisabled && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                                                    Cadastrar
+                                                </Button>
                                             </DialogFooter>
                                         </DialogContent>
                                     </Dialog>
@@ -352,3 +340,4 @@ export default function DataTableDemo() {
             </div>
     )
 }
+

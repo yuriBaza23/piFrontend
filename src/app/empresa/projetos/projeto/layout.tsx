@@ -6,17 +6,15 @@ export const metadata = {
   description: "",
 };
 
-export default function RootLayout({
+export default function Layout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="bg-[#f5f6f8]">
-        {children}
-        <Modal />
-      </body>
-    </html>
+    <div>
+      {children}
+      <Modal />
+    </div>
   );
 }

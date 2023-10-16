@@ -1,14 +1,14 @@
-"use client";
+'use client'
 import Sidebar from "@/components/ui/Sidebar";
-// import NewProject from "@/components/ui/NewProject";
 import Board from "@/components/taskboard/Board";
 import Header from "@/components/taskboard/Header";
-import { Separator } from "@radix-ui/react-separator";
+import { sidebarCmpItems } from "../../../../lib/sidebarItems";
+
 export default function About() {
   return (
     <div>
       <div className="layout">
-        <Sidebar></Sidebar>
+        <Sidebar sidebarItems={sidebarCmpItems}/>
         {/* <Separator /> */}
         <div className="w-[calc(100vw-6em-4rem)]">
           <Header />

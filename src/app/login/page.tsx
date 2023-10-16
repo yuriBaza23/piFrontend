@@ -29,7 +29,7 @@ export default function Login() {
 
         setIsDisabled(true);
         let res = await api.get("/user");
-        const user = res.data.find((user: any) => user.email === email);
+        const user = res.data && res.data?.find((user: any) => user.email === email);
         if (!user) {
             res = await api.get("/incubator");
             const incubator = res.data.find((inc: any) => inc.email === email);
