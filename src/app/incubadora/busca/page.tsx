@@ -21,7 +21,7 @@ export default function Busca_Empresa() {
         <div>
             <div className="layout">
                 <Sidebar></Sidebar>
-                <div>
+                <div className="content ml-4 mr-4 mt-4 mb-4">
                     <h1>Início</h1>
                     <Separator />
                     <div>

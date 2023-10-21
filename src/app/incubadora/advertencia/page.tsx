@@ -163,14 +163,14 @@ export default function DataTableDemo() {
         <div>
             <div className="layout">
                 <Sidebar sidebarItems={sidebarIncItems}/>
-                <div>
-                    <div className='w-[calc(100vw-6em-4rem)] flex items-center justify-between mt-2'>
+                <div className="content">
+                    <div className='w-[calc(100vw-6em-4rem)] flex items-center justify-between mt-2 mx-auto'>
                         <h1>Gerenciar advertências</h1>
                     </div>
                     <Separator />
                     <div>
                         <Spacer x={4} />
-                        <div className="w-full">
+                        <div className="ml-4 mr-4 mt-4 mb-4">
                             <div className="flex items-center py-4">
                                 <Input
                                     placeholder="Filtrar advertências por empresa"
@@ -181,6 +181,7 @@ export default function DataTableDemo() {
                                     className="max-w-sm"
                                 />
                                 <Spacer x={2} />
+                        
                                 <DropdownMenu>
                                     <DropdownMenuTrigger asChild>
                                         <Button variant="outline" className="color-card">

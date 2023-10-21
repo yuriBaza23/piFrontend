@@ -35,8 +35,8 @@ export default function Home_i() {
         <div>
             <div className="layout">
                 <Sidebar sidebarItems={sidebarIncItems}/>
-                <div>
-                    <div className='w-[calc(100vw-6em-4rem)] flex items-center justify-between mt-2'>
+                <div className='content'>
+                    <div className='w-[calc(100vw-6em-4rem)] flex items-center justify-between mt-2 ml-4 mr-4 mt-4 mb-4'>
                         <h1>Início</h1>
                         <Button onClick={() => router.push('/incubadora/pre-cadastro')}>Adicionar empresa</Button>
                     </div>
