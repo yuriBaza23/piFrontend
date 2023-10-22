@@ -56,7 +56,11 @@ export default function Home_i() {
                                     {company.cnpj.toString().substring(8, 12)}-
                                     {company.cnpj.toString().substring(12, 14)}
                                 </small>
-                                <CardBody className="overflow-visible py-2"><Button variant={"ghost"}>Gerenciar</Button></CardBody>
+                                <CardBody className="overflow-visible py-2">
+                                    <Button onClick={() =>  router.push(`/incubadora/tasks/${company.id}`)}>
+                                        Gerenciar
+                                    </Button>
+                                </CardBody>
                             </Card>
                         ))}
                     </div>

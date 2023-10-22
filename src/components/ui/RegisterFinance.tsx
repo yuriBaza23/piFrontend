@@ -49,7 +49,7 @@ const RegisterFinance = ({ companyId }: RegisterFinanceProps) => {
     <div>
       <button
         onClick={() => setModalOpen(true)}
-        className="bg-yellow-600 text-white font-bold cursor-pointer px-6 py-2 hover:bg-yellow-700 mt-2"
+        className="bg-yellow-600 text-white font-bold cursor-pointer px-6 py-2 hover:bg-yellow-700 mt-1"
       >
         Registrar Finança
       </button>
