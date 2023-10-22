@@ -73,8 +73,8 @@ export default function Tasks({ params }: { params: { id: string } }) {
         <div>
             <div className="layout">
                 <Sidebar sidebarItems={sidebarIncItems}/>
-                    <div>
-                        <div className="w-[calc(100vw-6em-4rem)] flex items-center justify-between mt-2 pb-2">
+                    <div  className="content">
+                        <div className="w-[calc(100vw-6em-4rem)] mx-auto flex flex-col md:flex-row justify-between mt-2">
                         <h1 className='mt-0 mb-2'>Gerenciamento de atividades {company.name}</h1>
                         <div className='flex gap-4'>
                             <Button>Gerar relatório de atividades</Button>
