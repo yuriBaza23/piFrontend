@@ -69,16 +69,16 @@ export default function About() {
     <div className="layout">
       <Sidebar sidebarItems={sidebarCmpItems} />
       <div className="content">
-      <div className="w-[calc(100vw-6em-4rem)] mx-auto flex flex-col md:flex-row justify-between mt-2">
+      <div className="w-[calc(100vw-6em-4rem)] flex flex-col md:flex-row items-center justify-between mt-2 mx-auto">
           <h1 className='mt-0 mb-2'>Gerenciamento</h1>
-          <div className='flex flex-wrap gap-2 sm:gap-4 md:gap-8 mx-auto mt-4 mb-4'>
+          <div className='flex flex-wrap gap-2 sm:gap-4 md:gap-8'>
             <RegisterFinance companyId={cmpId}/>
             <FinanceVisualization data={finances}/>
             <LoginProjectsProvider getBoards={getBoards} cmpId={cmpId}/>
           </div>
         </div>
         <Separator />
-        <div className='w-[calc(100vw-6em-4rem)] mx-auto mt-4 mb-4'>
+        <div className='w-[calc(100vw-6em-4rem)] flex mt-2 mx-auto'>
           <Spacer x={4} />
           <ProjectManager 
             projects={projects} 
