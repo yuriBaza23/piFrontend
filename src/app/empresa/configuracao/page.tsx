@@ -50,7 +50,7 @@ export default function Configuracoes_empresa() {
                         </div>
                     </div>
                     <Separator />
-                    <div className="w-[calc(100vw-6em-4rem)] flex items-center justify-between mt-2">
+                    <div className="w-[calc(100vw-6em-4rem)] md:flex-row items-center justify-between mt-2 mx-auto">
                         <Spacer x={4} />
                         <UserManager getUsers={getUsers} myId={myId} users={users} />
                     </div>

@@ -78,7 +78,7 @@ export default function About() {
           </div>
         </div>
         <Separator />
-        <div className='w-[calc(100vw-6em-4rem)] flex mt-2 mx-auto'>
+        <div className='w-[calc(100vw-6em-4rem)] md:flex-row items-center justify-between mt-2 mx-auto'>
           <Spacer x={4} />
           <ProjectManager 
             projects={projects} 
