@@ -34,7 +34,7 @@ export default function Busca_Empresa() {
                                 <AiOutlineSearch className="h-4 w-4" />
                             </Button>
                             <Button >
-                                Todas
+                                Todas 
                             </Button>
                         </div>
 
