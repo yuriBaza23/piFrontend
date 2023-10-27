@@ -164,13 +164,13 @@ export default function DataTableDemo() {
             <div className="layout">
                 <Sidebar sidebarItems={sidebarIncItems} />
                 <div className="content">
-                    <div className='w-[calc(100vw-6em-4rem)] flex items-center justify-between mt-2 mx-auto'>
-                        <h1>Gerenciar advertências</h1>
+                    <div className='w-[calc(100vw-6em-4rem)] flex flex-col md:flex-row items-center justify-between mt-2 mx-auto'>
+                        <h1 className="mt-0 mb-2">Gerenciar advertências</h1>
                     </div>
                     <Separator />
                     <div>
                         <Spacer x={4} />
-                        <div className="ml-4 mr-4 mt-4 mb-4">
+                        <div className="ml-8 mr-8 mt-4 mb-4">
                             <div className="flex items-center">
                                 <Input
                                     placeholder="Filtrar advertências por empresa"
