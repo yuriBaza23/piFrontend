@@ -21,10 +21,12 @@ export default function Busca_Empresa() {
         <div>
             <div className="layout">
                 <Sidebar></Sidebar>
-                <div className="content ml-4 mr-4 mt-4 mb-4">
-                    <h1>Início</h1>
+                <div className="content">
+                    <div className="w-[calc(100vw-6em-4rem)] flex flex-col md:flex-row items-center justify-between mt-2 mx-auto">
+                        <h1 className="mt-0 mb-2">Busca de empresas</h1>
+                    </div>
                     <Separator />
-                    <div>
+                    <div className="w-[calc(100vw-6em-4rem)] md:flex-row items-center justify-between mt-2 mx-auto">
                         <Spacer x={4} />
                         <div className="flex w-full max-w-sm items-center space-x-2">
                             <Input type="text" placeholder="Buscar..." />
@@ -32,18 +34,19 @@ export default function Busca_Empresa() {
                                 <AiOutlineSearch className="h-4 w-4" />
                             </Button>
                             <Button >
-                                All
+                                Todas 
                             </Button>
                         </div>
+
                         <Spacer x={4} />
-                        <Card className="w-[350px] bg-card2">
+                        <Card className="w-[100%] bg-card2">
                             <CardHeader>
                                 <CardDescription className="color-card">Confira os dados da empresa:</CardDescription>
                             </CardHeader>
                             <CardContent>
                                 <form>
                                     <div className="grid w-full items-center gap-4">
-                                    <div className="flex flex-col space-y-1.5">
+                                        <div className="flex flex-col space-y-1.5">
                                             <Label htmlFor="id">ID da empresa:</Label>
                                             <div className="rounded-md border px-4 py-2 font-mono text-sm shadow-sm">
                                                 ID da empresa

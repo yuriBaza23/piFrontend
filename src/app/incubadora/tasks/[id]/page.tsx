@@ -70,11 +70,11 @@ export default function Tasks({ params }: { params: { id: string } }) {
     }, [getMyIds])
 
     return (
-        <div>
-            <div className="layout">
-                <Sidebar sidebarItems={sidebarIncItems}/>
+        <div className='layout'>
+            <Sidebar sidebarItems={sidebarIncItems}/>
+            <div className="content">
                     <div>
-                        <div className="w-[calc(100vw-6em-4rem)] flex items-center justify-between mt-2 pb-2">
+                        <div className="w-[calc(100vw-6em-4rem)] flex flex-col md:flex-row items-center justify-between mt-2 mx-auto">
                         <h1 className='mt-0 mb-2'>Gerenciamento de atividades {company.name}</h1>
                         <div className='flex gap-4'>
                             <Button>Gerar relatório de atividades</Button>

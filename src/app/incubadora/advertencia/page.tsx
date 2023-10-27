@@ -101,7 +101,7 @@ export default function DataTableDemo() {
 
     const addWarning = useCallback(async () => {
         setIsDisabled(true)
-        if(!cmp || !description) {
+        if (!cmp || !description) {
             toast({
                 title: 'Preencha todos os campos',
                 variant: 'destructive'
@@ -116,7 +116,7 @@ export default function DataTableDemo() {
             companyID: cmp,
             incubatorID: incubatorId
         })
-        if(res.status == 200) {
+        if (res.status == 200) {
             toast({
                 title: 'Advertência cadastrada com sucesso'
             })
@@ -137,8 +137,8 @@ export default function DataTableDemo() {
 
     const getWarnings = useCallback(async (incId?: string) => {
         let res = await api.get(`warning`);
-        if(res.data) {
-            if(incId) setWarnings(res.data.filter((el: any) => el.incubatorID == incId));
+        if (res.data) {
+            if (incId) setWarnings(res.data.filter((el: any) => el.incubatorID == incId));
             else setWarnings(res.data.filter((el: any) => el.incubatorID == incubatorId));
             res.data.forEach((el: any) => {
                 el.company = companies.find((cmp: any) => cmp.id == el.companyID)?.name
@@ -162,16 +162,16 @@ export default function DataTableDemo() {
     return (
         <div>
             <div className="layout">
-                <Sidebar sidebarItems={sidebarIncItems}/>
+                <Sidebar sidebarItems={sidebarIncItems} />
                 <div className="content">
-                    <div className='w-[calc(100vw-6em-4rem)] flex items-center justify-between mt-2 mx-auto'>
-                        <h1>Gerenciar advertências</h1>
+                    <div className='w-[calc(100vw-6em-4rem)] flex flex-col md:flex-row items-center justify-between mt-2 mx-auto'>
+                        <h1 className="mt-0 mb-2">Gerenciar advertências</h1>
                     </div>
                     <Separator />
                     <div>
                         <Spacer x={4} />
-                        <div className="ml-4 mr-4 mt-4 mb-4">
-                            <div className="flex items-center py-4">
+                        <div className="ml-8 mr-8 mt-4 mb-4">
+                            <div className="flex items-center">
                                 <Input
                                     placeholder="Filtrar advertências por empresa"
                                     value={(table.getColumn("company")?.getFilterValue() as string) ?? ""}
@@ -181,7 +181,7 @@ export default function DataTableDemo() {
                                     className="max-w-sm"
                                 />
                                 <Spacer x={2} />
-                        
+
                                 <DropdownMenu>
                                     <DropdownMenuTrigger asChild>
                                         <Button variant="outline" className="color-card">
@@ -205,13 +205,13 @@ export default function DataTableDemo() {
                                                     <Label htmlFor="empresa" className="text-right">
                                                         Empresa
                                                     </Label>
-                                                    <Select 
+                                                    <Select
                                                         onValueChange={(value: string) => {
                                                             setCmp(value)
                                                         }}
                                                     >
                                                         <SelectTrigger id="empresa" className="col-span-3">
-                                                            <SelectValue placeholder="Selecione a empresa"/>
+                                                            <SelectValue placeholder="Selecione a empresa" />
                                                         </SelectTrigger>
                                                         <SelectContent>
                                                             {companies.map((company) => (
@@ -224,7 +224,7 @@ export default function DataTableDemo() {
                                                     <Label htmlFor="motivo" className="text-right">
                                                         Motivo
                                                     </Label>
-                                                    <Input id="motivo" className="col-span-3" onChange={(e) => setDescription(e.target.value)}/>
+                                                    <Input id="motivo" className="col-span-3" onChange={(e) => setDescription(e.target.value)} />
                                                 </div>
                                             </div>
                                             <DialogFooter>
@@ -262,83 +262,83 @@ export default function DataTableDemo() {
                                 </DropdownMenu>
                             </div>
 
-                                <Table className="bg-card2">
-                                    <TableHeader>
-                                        {table.getHeaderGroups().map((headerGroup) => (
-                                            <TableRow key={headerGroup.id}>
-                                                {headerGroup.headers.map((header) => {
-                                                    return (
-                                                        <TableHead key={header.id}>
-                                                            {header.isPlaceholder
-                                                                ? null
-                                                                : flexRender(
-                                                                    header.column.columnDef.header,
-                                                                    header.getContext()
-                                                                )}
-                                                        </TableHead>
-                                                    )
-                                                })}
-                                            </TableRow>
-                                        ))}
-                                    </TableHeader>
-                                    <TableBody>
-                                        {table.getRowModel().rows?.length ? (
-                                            table.getRowModel().rows.map((row) => (
-                                                <TableRow
-                                                    key={row.id}
-                                                    data-state={row.getIsSelected() && "selected"}
-                                                >
-                                                    {row.getVisibleCells().map((cell) => (
-                                                        <TableCell key={cell.id}>
-                                                            {flexRender(
-                                                                cell.column.columnDef.cell,
-                                                                cell.getContext()
+                            <Table className="bg-card2">
+                                <TableHeader>
+                                    {table.getHeaderGroups().map((headerGroup) => (
+                                        <TableRow key={headerGroup.id}>
+                                            {headerGroup.headers.map((header) => {
+                                                return (
+                                                    <TableHead key={header.id}>
+                                                        {header.isPlaceholder
+                                                            ? null
+                                                            : flexRender(
+                                                                header.column.columnDef.header,
+                                                                header.getContext()
                                                             )}
-                                                        </TableCell>
-                                                    ))}
-                                                </TableRow>
-                                            ))
-                                        ) : (
-                                            <TableRow>
-                                                <TableCell
-                                                    colSpan={columns.length}
-                                                    className="h-24 text-center"
-                                                >
-                                                    No results.
-                                                </TableCell>
+                                                    </TableHead>
+                                                )
+                                            })}
+                                        </TableRow>
+                                    ))}
+                                </TableHeader>
+                                <TableBody>
+                                    {table.getRowModel().rows?.length ? (
+                                        table.getRowModel().rows.map((row) => (
+                                            <TableRow
+                                                key={row.id}
+                                                data-state={row.getIsSelected() && "selected"}
+                                            >
+                                                {row.getVisibleCells().map((cell) => (
+                                                    <TableCell key={cell.id}>
+                                                        {flexRender(
+                                                            cell.column.columnDef.cell,
+                                                            cell.getContext()
+                                                        )}
+                                                    </TableCell>
+                                                ))}
                                             </TableRow>
-                                        )}
-                                    </TableBody>
-                                </Table>
+                                        ))
+                                    ) : (
+                                        <TableRow>
+                                            <TableCell
+                                                colSpan={columns.length}
+                                                className="h-24 text-center"
+                                            >
+                                                No results.
+                                            </TableCell>
+                                        </TableRow>
+                                    )}
+                                </TableBody>
+                            </Table>
+                        </div>
+                        <div className="flex items-center space-x-2 py-4 mr-4 ml-2">
+                            <div className="text-sm text-muted-foreground mr-2 ml-2">
+                                {table.getFilteredSelectedRowModel().rows.length} de{" "}
+                                {table.getFilteredRowModel().rows.length} linhas selecionadas.
                             </div>
-                            <div className="flex items-center justify-end space-x-2 py-4">
-                                <div className="flex-1 text-sm text-muted-foreground">
-                                    {table.getFilteredSelectedRowModel().rows.length} of{" "}
-                                    {table.getFilteredRowModel().rows.length} row(s) selected.
-                                </div>
-                                <div className="space-x-2">
-                                    <Button
-                                        variant="outline" className="color-card"
-                                        size="sm"
-                                        onClick={() => table.previousPage()}
-                                        disabled={!table.getCanPreviousPage()}
-                                    >
-                                        Anterior
-                                    </Button>
-                                    <Button 
-                                        variant="outline" className="color-card"
-                                        size="sm"
-                                        onClick={() => table.nextPage()}
-                                        disabled={!table.getCanNextPage()}
-                                    >
-                                        Próximo
-                                    </Button>
-                                </div>
+                            <div className="space-x-2 md:flex-row items-center mx-auto my-auto">
+                                <Button
+                                    variant="outline" className="color-card"
+                                    size="sm"
+                                    onClick={() => table.previousPage()}
+                                    disabled={!table.getCanPreviousPage()}
+                                >
+                                    Anterior
+                                </Button>
+                                <Button
+                                    variant="outline" className="color-card"
+                                    size="sm"
+                                    onClick={() => table.nextPage()}
+                                    disabled={!table.getCanNextPage()}
+                                >
+                                    Próximo
+                                </Button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     )
 }
 
