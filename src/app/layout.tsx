@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Toaster } from '../components/ui/toaster'
 import { ReactNode } from 'react'
+import { AuthProvider } from '../hooks/useAuth'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,8 +19,10 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         <link rel="icon" href="https://i.imgur.com/HI8Xaw5.png" />
       </head>
       <body className={inter.className}>
-        {children}
-        <Toaster/>
+        <AuthProvider>
+          {children}
+          <Toaster/>
+        </AuthProvider>
       </body>
     </html>
   )

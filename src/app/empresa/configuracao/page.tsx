@@ -9,32 +9,22 @@ import UserManager, { IUser } from '../../../components/ui/userManager';
 import { useCallback, useEffect, useState } from 'react';
 import api from '../../../lib/api';
 import { sidebarCmpItems } from '../../../lib/sidebarItems';
+import { useAuth } from '../../../hooks/useAuth';
 
 export default function Configuracoes_empresa() {
-    const [myId, setMyId] = useState("");
-    const [cmpId, setCmpId] = useState("");
     const [users, setUsers] = useState<IUser[]>([])
-
-    const getMyIds = useCallback(async () => {
-        const myId = localStorage.getItem('@pi_myId');
-        const cmpId = localStorage.getItem('@pi_cmpId');
-        if (myId && cmpId) {
-            setMyId(myId);
-            setCmpId(cmpId)
-        }
-    }, [])
+    const { user } = useAuth();
 
     const getUsers = useCallback(async () => {
-        if (cmpId) {
-            const res = await api.get(`company/${cmpId}`);
+        if (user) {
+            const res = await api.get(`company/${user.companyId}`);
             setUsers(res.data.users);
         }
-    }, [cmpId])
+    }, [user])
 
     useEffect(() => {
-        getMyIds()
         getUsers()
-    }, [getMyIds, getUsers])
+    }, [getUsers])
 
     return (
         <div>
@@ -52,7 +42,7 @@ export default function Configuracoes_empresa() {
                     <Separator />
                     <div className="w-[calc(100vw-6em-4rem)] flex items-center justify-between mt-2">
                         <Spacer x={4} />
-                        <UserManager getUsers={getUsers} myId={myId} users={users} />
+                        <UserManager getUsers={getUsers} myId={user?.id || ""} users={users} />
                     </div>
                 </div>
             </div>

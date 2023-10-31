@@ -8,9 +8,11 @@ import { useCallback, useEffect, useState } from 'react';
 import api from '../../../lib/api';
 import { sidebarIncItems } from '../../../lib/sidebarItems';
 import { useRouter } from 'next/navigation';
+import { useAuth } from '../../../hooks/useAuth';
 
 export default function Home_i() {
     const [companies, setCompanies] = useState<any[]>([])
+    const { user } = useAuth();
     const router = useRouter();
 
     const getCompany = useCallback(async (id: string) => {
@@ -21,11 +23,10 @@ export default function Home_i() {
     }, [])
 
     const getMyIds = useCallback(async () => {
-        const myId = localStorage.getItem('@pi_myId');
-        if (myId) {
-            getCompany(myId)
+        if (user) {
+            getCompany(user.id)
         }
-    }, [getCompany])
+    }, [getCompany, user])
 
     useEffect(() => {
         getMyIds()
