@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback } from "react";
 import { BsPower } from "react-icons/bs";
+import { useAuth } from "../../hooks/useAuth";
 
 interface SidebarItems {
     name: string;
@@ -14,14 +15,13 @@ interface SidebarProps {
 }
   
 export default function Sidebar({sidebarItems}: SidebarProps) {
+    const { signOut } = useAuth();
     const router = useRouter();
 
     const logout = useCallback(async () => {
-        localStorage.removeItem("@pi_myId");
-        localStorage.removeItem("@pi_cmpId");
-        localStorage.removeItem("@pi_type");
+        await signOut();
         router.push("/");
-    }, [router])
+    }, [signOut, router])
 
     return (
         <div>

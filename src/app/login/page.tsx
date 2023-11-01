@@ -3,10 +3,10 @@
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import api from "../../lib/api";
 import { useToast } from "../../components/ui/use-toast";
 import { Button } from "../../components/ui/button";
 import { Loader2 } from "lucide-react";
+import { useAuth } from "../../hooks/useAuth";
 
 export default function Login() {
     const { toast } = useToast();
@@ -14,6 +14,7 @@ export default function Login() {
     const [password, setPassword] = useState("");
     const [isDisabled, setIsDisabled] = useState(true);
     const router = useRouter();
+    const { signIn, signed, type, user } = useAuth();
 
     // Para simular autenticação
     async function getUser(e: any) {
@@ -26,56 +27,38 @@ export default function Login() {
             })
             return;
         }
-
+        
         setIsDisabled(true);
-        let res = await api.get("/user");
-        const user = res.data && res.data?.find((user: any) => user.email === email);
-        if (!user) {
-            res = await api.get("/incubator");
-            const incubator = res.data.find((inc: any) => inc.email === email);
-            if (!incubator) {
-                toast({
-                    title: "Usuário não encontrado",
-                    description: "Verifique seus dados e tente novamente",
-                    variant: 'destructive'
-                })
-                return;
-            }
-
-            localStorage.setItem("@pi_myId", incubator.id);
-            localStorage.setItem("@pi_type", 'incubator');
-
-            router.push("/incubadora/home");
+        let res = await signIn({ email, password });
+        if(!res) {
+            toast({
+                title: "Usuário não encontrado",
+                description: "Verifique seus dados e tente novamente",
+                variant: 'destructive'
+            })
+            setIsDisabled(false);
             return;
         }
-
-        localStorage.setItem("@pi_myId", user.id);
-        localStorage.setItem("@pi_cmpId", user.companyId);
-        localStorage.setItem("@pi_type", 'user');
-
-        if (user.isPreRegister) router.push(`/empresa/cadastro/${user.id}`);
-        else router.push("/empresa/configuracao");
-        return;
+        if (res.type !== 'company') {
+            router.push("/incubadora/home");
+            setIsDisabled(false);
+        } else {
+            if (res.user.isPreRegister) router.push(`/empresa/cadastro/${res.user.id}`);
+            else router.push("/empresa/configuracao");
+            setIsDisabled(false);
+        }
     }
 
     const isLogged = useCallback(async () => {
-        const myId = localStorage.getItem("@pi_myId");
-        const type = localStorage.getItem("@pi_type");
-        if (myId && type) {
-            if (type === 'user') {
-                const res = await api.get(`/user/${myId}`);
-                if (res.status === 200) {
-                    if (res.data.isPreRegister) router.push(`/empresa/cadastro/${myId}`);
-                    else router.push("/empresa/configuracao");
-                }
+        if (signed && user) {
+            if (type === 'company') {
+                if (user.isPreRegister) router.push(`/empresa/cadastro/${user.id}`);
+                else router.push("/empresa/configuracao");
             } else {
-                const res = await api.get(`/incubator/${myId}`);
-                if (res.status === 200) {
-                    router.push("/incubadora/home");
-                }
+                router.push("/incubadora/home");
             }
         }
-    }, [router])
+    }, [signed, type, user, router])
 
     useEffect(() => {
         setIsDisabled(false)
