@@ -53,7 +53,7 @@ export const Boards = ({
                     <TableHead className="w-1/5 font-bold">Tarefa</TableHead>
                     <TableHead className="w-1/5 font-bold">Lista</TableHead>
                     <TableHead className="w-1/6 font-bold">Prazo</TableHead>
-                    <TableHead className="w-1/6 font-bold">Conclusao</TableHead>
+                    <TableHead className="w-1/6 font-bold">Conclusão</TableHead>
                     <TableHead className="w-1/5 font-bold">Status</TableHead>
                   </TableRow>
                 </TableHeader>

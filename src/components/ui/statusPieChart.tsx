@@ -45,7 +45,7 @@ export const StatusPieChart: React.FC<IStatusPieChartProps> = ({
   }));
 
   return (
-    <svg width={800} height={200}>
+    <svg viewBox="0 0 800 200" width="50%">
       <text
         x={400}
         y={20}
@@ -76,9 +76,12 @@ export const StatusPieChart: React.FC<IStatusPieChartProps> = ({
         standalone={false}
         x={420}
         y={60}
+        width={400}
+        height={400}
         orientation="vertical"
-        gutter={20}
-        style={{ title: { fontSize: 20 }, labels: { fill: "white" } }}
+        style={{
+          labels: { fill: "white", fontSize: 18, lineHeight: 20, padding: 10 },
+        }}
         data={legendData}
       />
     </svg>

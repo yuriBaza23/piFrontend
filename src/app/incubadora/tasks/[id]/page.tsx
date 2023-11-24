@@ -10,6 +10,8 @@ import { sidebarIncItems } from "../../../../lib/sidebarItems";
 import localApi from "../../../../lib/localApi";
 import { Boards } from "../../../../components/ui/boards";
 import { StatusPieChart } from "@/components/ui/statusPieChart";
+import ReactPDF, { BlobProvider } from "@react-pdf/renderer";
+import { ReportTemplate } from "@/components/report/template";
 
 export default function Tasks({ params }: { params: { id: string } }) {
   const [company, setCompany] = useState<any>({});
@@ -71,7 +73,7 @@ export default function Tasks({ params }: { params: { id: string } }) {
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
     },
-    [params.id, lists, cards]
+    [params.id]
   );
 
   const getLists = useCallback(async (boardId: string, token: string) => {
@@ -156,6 +158,10 @@ export default function Tasks({ params }: { params: { id: string } }) {
     getMyIds();
   }, [getMyIds]);
 
+  const generateReport = useCallback(() => {
+    ReactPDF.renderToStream(<ReportTemplate />);
+  }, []);
+
   return (
     <div className="layout">
       <Sidebar sidebarItems={sidebarIncItems} />
@@ -166,7 +172,13 @@ export default function Tasks({ params }: { params: { id: string } }) {
               Gerenciamento de atividades {company.name}
             </h1>
             <div className="flex gap-4">
-              <Button>Gerar relatório de atividades</Button>
+              <BlobProvider document={<ReportTemplate />}>
+                {({ url }) => (
+                  <a href={url as string} target="_blank">
+                    <Button>Gerar relatório de atividades</Button>
+                  </a>
+                )}
+              </BlobProvider>
             </div>
           </div>
           <Separator />
