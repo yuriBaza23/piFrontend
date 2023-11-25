@@ -5,11 +5,7 @@ import { FormEventHandler, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useToast } from "./use-toast";
 import api from "../../lib/api";
-import { LuListPlus } from "react-icons/lu";
-// import { Listbox, ListboxItem } from "@nextui-org/react";
-// import { ListboxWrapper } from "./ListboxWrapper";
-import { List } from "lucide-react";
-import { Select, SelectItem } from "@nextui-org/react";
+import { LuListPlus } from "react-icons/lu"; 
 
 interface RegisterFinanceProps {
   companyId?: string;

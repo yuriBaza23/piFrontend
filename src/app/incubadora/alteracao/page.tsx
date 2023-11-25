@@ -19,10 +19,10 @@ export default function Alteracao_Empresa() {
             <div className="shadow-lg p-5 rounded-lg bg-login">
                 <div className="login-logo">
                     <Image
-                        src="https://i.imgur.com/HI8Xaw5.png"
-                        width={80}
-                        height={50}
-                        className="sidebar__logo"
+                        src="/img/logo_name_yellow.svg"
+                        width={150}
+                        height={150}
+                        // className="sidebar__logo"
                         alt="logo" />
                 </div>
                 <h1 className="text-xl font-bold my-4">Alterar dados da empresa</h1>
