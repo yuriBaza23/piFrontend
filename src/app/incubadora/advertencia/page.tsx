@@ -262,7 +262,7 @@ export default function DataTableDemo() {
                                 </DropdownMenu>
                             </div>
 
-                            <Table className="bg-card2">
+                            <Table className="bg-card2 mt-2">
                                 <TableHeader>
                                     {table.getHeaderGroups().map((headerGroup) => (
                                         <TableRow key={headerGroup.id}>
