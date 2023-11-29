@@ -1,9 +1,9 @@
 export type Media =
   | "phoneCall"
   | "soinvieMail"
-  | "cleanUpMail"
+  | "receita"
   | "pipefy"
-  | "cleanUpWhatsapp"
+  | "retirada"
   | "soinvieWhatsapp";
 
 export type months =
@@ -55,12 +55,12 @@ export const translateMedia = (media: Media) => {
       return "Ligação telefônica";
     case "soinvieMail":
       return "E-mail Soinvie";
-    case "cleanUpMail":
-      return "E-mail Clean Up";
+    case "receita":
+      return "Receita";
     case "pipefy":
       return "Pipefy";
-    case "cleanUpWhatsapp":
-      return "Whatsapp Clean Up";
+    case "retirada":
+      return "Saídas";
     case "soinvieWhatsapp":
       return "Whatsapp Soinvie";
   }
@@ -106,16 +106,15 @@ export type Seller = {
 export const yearData = {
   2020: {
     jan: {
-      cleanUpMail: [
-        { subType: "institutional", value: 123 },
-        { subType: "sac", value: 123 },
-        { subType: "shopping", value: 123 },
-        { subType: "sales", value: 123 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -134,16 +133,15 @@ export const yearData = {
       ],
     },
     fev: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -162,16 +160,15 @@ export const yearData = {
       ],
     },
     mar: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -190,16 +187,15 @@ export const yearData = {
       ],
     },
     abr: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -218,16 +214,15 @@ export const yearData = {
       ],
     },
     mai: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -246,16 +241,15 @@ export const yearData = {
       ],
     },
     jun: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -274,16 +268,15 @@ export const yearData = {
       ],
     },
     jul: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -302,16 +295,15 @@ export const yearData = {
       ],
     },
     ago: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -330,16 +322,15 @@ export const yearData = {
       ],
     },
     set: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -358,16 +349,15 @@ export const yearData = {
       ],
     },
     out: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -386,16 +376,15 @@ export const yearData = {
       ],
     },
     nov: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -414,16 +403,15 @@ export const yearData = {
       ],
     },
     dez: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -444,16 +432,15 @@ export const yearData = {
   },
   2021: {
     jan: {
-      cleanUpMail: [
-        { subType: "institutional", value: 5 },
-        { subType: "sac", value: 6 },
-        { subType: "shopping", value: 7 },
-        { subType: "sales", value: 8 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -472,16 +459,15 @@ export const yearData = {
       ],
     },
     fev: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -500,16 +486,15 @@ export const yearData = {
       ],
     },
     mar: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -528,16 +513,15 @@ export const yearData = {
       ],
     },
     abr: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -556,16 +540,15 @@ export const yearData = {
       ],
     },
     mai: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -584,16 +567,15 @@ export const yearData = {
       ],
     },
     jun: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -612,16 +594,15 @@ export const yearData = {
       ],
     },
     jul: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -640,16 +621,15 @@ export const yearData = {
       ],
     },
     ago: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -668,16 +648,15 @@ export const yearData = {
       ],
     },
     set: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -696,16 +675,15 @@ export const yearData = {
       ],
     },
     out: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -724,16 +702,15 @@ export const yearData = {
       ],
     },
     nov: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -752,16 +729,15 @@ export const yearData = {
       ],
     },
     dez: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -782,16 +758,15 @@ export const yearData = {
   },
   2022: {
     jan: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -810,16 +785,15 @@ export const yearData = {
       ],
     },
     fev: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -838,16 +812,15 @@ export const yearData = {
       ],
     },
     mar: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -866,16 +839,15 @@ export const yearData = {
       ],
     },
     abr: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -894,16 +866,15 @@ export const yearData = {
       ],
     },
     mai: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -922,16 +893,15 @@ export const yearData = {
       ],
     },
     jun: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -950,16 +920,15 @@ export const yearData = {
       ],
     },
     jul: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -978,16 +947,15 @@ export const yearData = {
       ],
     },
     ago: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -1006,16 +974,15 @@ export const yearData = {
       ],
     },
     set: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -1034,16 +1001,15 @@ export const yearData = {
       ],
     },
     out: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -1062,16 +1028,15 @@ export const yearData = {
       ],
     },
     nov: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -1090,16 +1055,15 @@ export const yearData = {
       ],
     },
     dez: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -1120,16 +1084,15 @@ export const yearData = {
   },
   2023: {
     jan: {
-      cleanUpMail: [
-        { subType: "institutional", value: 1, isEditable: true },
-        { subType: "sac", value: 2, isEditable: true },
-        { subType: "shopping", value: 3 },
-        { subType: "sales", value: 4 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0, isEditable: true },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -1148,16 +1111,15 @@ export const yearData = {
       ],
     },
     fev: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -1176,16 +1138,15 @@ export const yearData = {
       ],
     },
     mar: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0, isEditable: true },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -1204,16 +1165,15 @@ export const yearData = {
       ],
     },
     abr: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -1232,16 +1192,15 @@ export const yearData = {
       ],
     },
     mai: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -1260,16 +1219,15 @@ export const yearData = {
       ],
     },
     jun: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -1288,16 +1246,15 @@ export const yearData = {
       ],
     },
     jul: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -1316,16 +1273,15 @@ export const yearData = {
       ],
     },
     ago: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -1344,16 +1300,15 @@ export const yearData = {
       ],
     },
     set: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -1372,16 +1327,15 @@ export const yearData = {
       ],
     },
     out: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -1400,16 +1354,15 @@ export const yearData = {
       ],
     },
     nov: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -1428,16 +1381,15 @@ export const yearData = {
       ],
     },
     dez: {
-      cleanUpMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sales", value: 0 },
+      receita: [
+        { subType: "Recorrente", value: 123 },
+        { subType: "Não recorrente", value: 123 },
+        { subType: "Bruta", value: 123 },
       ],
-      cleanUpWhatsapp: [
-        { subType: "sales", value: 0 },
-        { subType: "shopping", value: 0 },
-        { subType: "sac", value: 0 },
+      retirada: [
+        { subType: "Despesas", value: 123 },
+        { subType: "Imposto", value: 123 },
+        { subType: "Deduções", value: 123 },
       ],
       phoneCall: [
         { subType: "clean-up", value: 0 },
@@ -1461,13 +1413,12 @@ export const yearData = {
 export const monthData = {
   jan: {
     fernanda: {
-      cleanUpMail: [
-        { subType: "institutional", value: 123, isEditable: true },
-        { subType: "sac", value: 123, isEditable: true },
-        { subType: "shopping", value: 123 },
-        { subType: "sales", value: 123 , isEditable: true},
+      receita: [
+        { subType: "recorrente", value: 123, isEditable: true },
+        { subType: "não recorrente", value: 123, isEditable: true },
+        { subType: "bruta", value: 123, isEditable: true },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0, isEditable: true },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
@@ -1489,13 +1440,13 @@ export const monthData = {
       ],
     },
     Marcelo: {
-      cleanUpMail: [
+      receita: [
         { subType: "institutional", value: 123 },
         { subType: "sac", value: 123 },
         { subType: "shopping", value: 123 },
         { subType: "sales", value: 123 },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0, isEditable: true },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
@@ -1519,13 +1470,13 @@ export const monthData = {
   },
   abr: {
     fernanda: {
-      cleanUpMail: [
+      receita: [
         { subType: "institutional", value: 13 },
         { subType: "sac", value: 13 },
         { subType: "shopping", value: 13 },
         { subType: "sales", value: 123 },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0, isEditable: true },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
@@ -1547,13 +1498,13 @@ export const monthData = {
       ],
     },
     Marcelo: {
-      cleanUpMail: [
+      receita: [
         { subType: "institutional", value: 123 },
         { subType: "sac", value: 123 },
         { subType: "shopping", value: 123 },
         { subType: "sales", value: 123 },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0 },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
@@ -1577,13 +1528,13 @@ export const monthData = {
   },
   jul: {
     fernanda: {
-      cleanUpMail: [
+      receita: [
         { subType: "institutional", value: 123 },
         { subType: "sac", value: 123 },
         { subType: "shopping", value: 123 },
         { subType: "sales", value: 123 },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0 },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
@@ -1605,13 +1556,13 @@ export const monthData = {
       ],
     },
     Marcelo: {
-      cleanUpMail: [
+      receita: [
         { subType: "institutional", value: 123 },
         { subType: "sac", value: 123 },
         { subType: "shopping", value: 123 },
         { subType: "sales", value: 123 },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0 },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
@@ -1635,13 +1586,13 @@ export const monthData = {
   },
   out: {
     fernanda: {
-      cleanUpMail: [
+      receita: [
         { subType: "institutional", value: 123 },
         { subType: "sac", value: 123 },
         { subType: "shopping", value: 123 },
         { subType: "sales", value: 123 },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0 },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
@@ -1663,13 +1614,13 @@ export const monthData = {
       ],
     },
     Marcelo: {
-      cleanUpMail: [
+      receita: [
         { subType: "institutional", value: 123 },
         { subType: "sac", value: 123 },
         { subType: "shopping", value: 123 },
         { subType: "sales", value: 123 },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0 },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
@@ -1693,13 +1644,13 @@ export const monthData = {
   },
   fev: {
     fernanda: {
-      cleanUpMail: [
+      receita: [
         { subType: "institutional", value: 123 },
         { subType: "sac", value: 123 },
         { subType: "shopping", value: 123 },
         { subType: "sales", value: 123 },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0 },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
@@ -1721,13 +1672,13 @@ export const monthData = {
       ],
     },
     Marcelo: {
-      cleanUpMail: [
+      receita: [
         { subType: "institutional", value: 123 },
         { subType: "sac", value: 123 },
         { subType: "shopping", value: 123 },
         { subType: "sales", value: 123 },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0 },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
@@ -1751,13 +1702,13 @@ export const monthData = {
   },
   mai: {
     fernanda: {
-      cleanUpMail: [
+      receita: [
         { subType: "institutional", value: 123 },
         { subType: "sac", value: 123 },
         { subType: "shopping", value: 123 },
         { subType: "sales", value: 123 },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0 },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
@@ -1779,13 +1730,13 @@ export const monthData = {
       ],
     },
     Marcelo: {
-      cleanUpMail: [
+      receita: [
         { subType: "institutional", value: 123 },
         { subType: "sac", value: 123 },
         { subType: "shopping", value: 123 },
         { subType: "sales", value: 123 },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0 },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
@@ -1809,13 +1760,13 @@ export const monthData = {
   },
   ago: {
     fernanda: {
-      cleanUpMail: [
+      receita: [
         { subType: "institutional", value: 123 },
         { subType: "sac", value: 123 },
         { subType: "shopping", value: 123 },
         { subType: "sales", value: 123 },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0 },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
@@ -1837,13 +1788,13 @@ export const monthData = {
       ],
     },
     Marcelo: {
-      cleanUpMail: [
+      receita: [
         { subType: "institutional", value: 123 },
         { subType: "sac", value: 123 },
         { subType: "shopping", value: 123 },
         { subType: "sales", value: 123 },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0 },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
@@ -1867,13 +1818,13 @@ export const monthData = {
   },
   nov: {
     fernanda: {
-      cleanUpMail: [
+      receita: [
         { subType: "institutional", value: 123 },
         { subType: "sac", value: 123 },
         { subType: "shopping", value: 123 },
         { subType: "sales", value: 123 },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0 },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
@@ -1895,13 +1846,13 @@ export const monthData = {
       ],
     },
     Marcelo: {
-      cleanUpMail: [
+      receita: [
         { subType: "institutional", value: 123 },
         { subType: "sac", value: 123 },
         { subType: "shopping", value: 123 },
         { subType: "sales", value: 123 },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0 },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
@@ -1925,13 +1876,13 @@ export const monthData = {
   },
   mar: {
     fernanda: {
-      cleanUpMail: [
+      receita: [
         { subType: "institutional", value: 123 },
         { subType: "sac", value: 123 },
         { subType: "shopping", value: 123 },
         { subType: "sales", value: 123 },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0 },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
@@ -1953,13 +1904,13 @@ export const monthData = {
       ],
     },
     Marcelo: {
-      cleanUpMail: [
+      receita: [
         { subType: "institutional", value: 123 },
         { subType: "sac", value: 123 },
         { subType: "shopping", value: 123 },
         { subType: "sales", value: 123 },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0 },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
@@ -1983,13 +1934,13 @@ export const monthData = {
   },
   jun: {
     fernanda: {
-      cleanUpMail: [
+      receita: [
         { subType: "institutional", value: 123 },
         { subType: "sac", value: 123 },
         { subType: "shopping", value: 123 },
         { subType: "sales", value: 123 },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0 },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
@@ -2011,13 +1962,13 @@ export const monthData = {
       ],
     },
     Marcelo: {
-      cleanUpMail: [
+      receita: [
         { subType: "institutional", value: 123 },
         { subType: "sac", value: 123 },
         { subType: "shopping", value: 123 },
         { subType: "sales", value: 123 },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0 },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
@@ -2041,13 +1992,13 @@ export const monthData = {
   },
   set: {
     fernanda: {
-      cleanUpMail: [
+      receita: [
         { subType: "institutional", value: 123 },
         { subType: "sac", value: 123 },
         { subType: "shopping", value: 123 },
         { subType: "sales", value: 123 },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0 },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
@@ -2069,13 +2020,13 @@ export const monthData = {
       ],
     },
     Marcelo: {
-      cleanUpMail: [
+      receita: [
         { subType: "institutional", value: 123 },
         { subType: "sac", value: 123 },
         { subType: "shopping", value: 123 },
         { subType: "sales", value: 123 },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0 },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
@@ -2099,13 +2050,13 @@ export const monthData = {
   },
   dez: {
     fernanda: {
-      cleanUpMail: [
+      receita: [
         { subType: "institutional", value: 123 },
         { subType: "sac", value: 123 },
         { subType: "shopping", value: 123 },
         { subType: "sales", value: 123 },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0 },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
@@ -2127,13 +2078,13 @@ export const monthData = {
       ],
     },
     Marcelo: {
-      cleanUpMail: [
+      receita: [
         { subType: "institutional", value: 123 },
         { subType: "sac", value: 123 },
         { subType: "shopping", value: 123 },
         { subType: "sales", value: 123 },
       ],
-      cleanUpWhatsapp: [
+      retirada: [
         { subType: "sales", value: 0 },
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
