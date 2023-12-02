@@ -1,10 +1,7 @@
 export type Media =
-  | "phoneCall"
-  | "soinvieMail"
+  | "indicadores"
   | "receita"
-  | "pipefy"
-  | "retirada"
-  | "soinvieWhatsapp";
+  | "retirada";
 
 export type months =
   | "jan"
@@ -51,18 +48,12 @@ export const translateMonth = (month: months) => {
 
 export const translateMedia = (media: Media) => {
   switch (media) {
-    case "phoneCall":
-      return "Ligação telefônica";
-    case "soinvieMail":
-      return "E-mail Soinvie";
+    case "indicadores":
+      return "Indicadores financeiros";
     case "receita":
       return "Receita";
-    case "pipefy":
-      return "Pipefy";
     case "retirada":
       return "Saídas";
-    case "soinvieWhatsapp":
-      return "Whatsapp Soinvie";
   }
 };
 
@@ -116,21 +107,11 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
-      ],
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
+      ],      
     },
     fev: {
       receita: [
@@ -143,20 +124,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     mar: {
@@ -170,20 +141,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     abr: {
@@ -197,20 +158,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     mai: {
@@ -224,20 +175,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     jun: {
@@ -251,20 +192,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     jul: {
@@ -278,20 +209,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     ago: {
@@ -305,20 +226,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     set: {
@@ -332,20 +243,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     out: {
@@ -359,20 +260,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     nov: {
@@ -386,20 +277,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     dez: {
@@ -413,20 +294,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
   },
@@ -442,21 +313,11 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
-      ],
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
+      ],      
     },
     fev: {
       receita: [
@@ -469,20 +330,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     mar: {
@@ -496,20 +347,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     abr: {
@@ -523,20 +364,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     mai: {
@@ -550,20 +381,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     jun: {
@@ -577,20 +398,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     jul: {
@@ -604,20 +415,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     ago: {
@@ -631,20 +432,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     set: {
@@ -658,20 +449,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     out: {
@@ -685,20 +466,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     nov: {
@@ -712,20 +483,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     dez: {
@@ -739,20 +500,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
   },
@@ -768,21 +519,11 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
-      ],
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
+      ],      
     },
     fev: {
       receita: [
@@ -795,20 +536,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     mar: {
@@ -822,20 +553,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     abr: {
@@ -849,20 +570,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     mai: {
@@ -876,20 +587,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     jun: {
@@ -903,20 +604,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     jul: {
@@ -930,20 +621,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     ago: {
@@ -957,20 +638,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     set: {
@@ -984,20 +655,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     out: {
@@ -1011,20 +672,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     nov: {
@@ -1038,20 +689,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     dez: {
@@ -1065,20 +706,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
   },
@@ -1094,21 +725,11 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
-      ],
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
+      ],      
     },
     fev: {
       receita: [
@@ -1121,20 +742,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     mar: {
@@ -1148,20 +759,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     abr: {
@@ -1175,20 +776,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     mai: {
@@ -1202,20 +793,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     jun: {
@@ -1229,20 +810,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     jul: {
@@ -1256,20 +827,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     ago: {
@@ -1283,20 +844,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     set: {
@@ -1310,20 +861,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     out: {
@@ -1337,20 +878,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     nov: {
@@ -1364,20 +895,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
     dez: {
@@ -1391,20 +912,10 @@ export const yearData = {
         { subType: "Imposto", value: 123 },
         { subType: "Deduções", value: 123 },
       ],
-      phoneCall: [
-        { subType: "clean-up", value: 0 },
-        { subType: "soinvie", value: 0 },
-      ],
-      pipefy: [{ subType: "clean-up", value: 0 }],
-      soinvieMail: [
-        { subType: "institutional", value: 0 },
-        { subType: "sac", value: 0 },
-        { subType: "soinvieSac", value: 0 },
-        { subType: "soinvieSupport", value: 0 },
-      ],
-      soinvieWhatsapp: [
-        { subType: "soinvieInstitutional", value: 0 },
-        { subType: "soinvieOnline", value: 0 },
+      indicadores: [
+        { subType: "Taxa de crescimento", value: 123 },
+        { subType: "Receita líquida", value: 123 },
+        { subType: "Lucro bruto", value: 123 },
       ],
     },
   },
@@ -1423,7 +934,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 },
         { subType: "soinvie", value: 0 },
       ],
@@ -1451,7 +962,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 , isEditable: true},
         { subType: "soinvie", value: 0 },
       ],
@@ -1481,7 +992,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 },
         { subType: "soinvie", value: 0 },
       ],
@@ -1509,7 +1020,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 },
         { subType: "soinvie", value: 0 },
       ],
@@ -1539,7 +1050,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 },
         { subType: "soinvie", value: 0 },
       ],
@@ -1567,7 +1078,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 },
         { subType: "soinvie", value: 0 },
       ],
@@ -1597,7 +1108,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 },
         { subType: "soinvie", value: 0 },
       ],
@@ -1625,7 +1136,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 },
         { subType: "soinvie", value: 0 },
       ],
@@ -1655,7 +1166,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 },
         { subType: "soinvie", value: 0 },
       ],
@@ -1683,7 +1194,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 },
         { subType: "soinvie", value: 0 },
       ],
@@ -1713,7 +1224,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 },
         { subType: "soinvie", value: 0 },
       ],
@@ -1741,7 +1252,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 },
         { subType: "soinvie", value: 0 },
       ],
@@ -1771,7 +1282,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 },
         { subType: "soinvie", value: 0 },
       ],
@@ -1799,7 +1310,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 },
         { subType: "soinvie", value: 0 },
       ],
@@ -1829,7 +1340,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 },
         { subType: "soinvie", value: 0 },
       ],
@@ -1857,7 +1368,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 },
         { subType: "soinvie", value: 0 },
       ],
@@ -1887,7 +1398,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 },
         { subType: "soinvie", value: 0 },
       ],
@@ -1915,7 +1426,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 },
         { subType: "soinvie", value: 0 },
       ],
@@ -1945,7 +1456,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 },
         { subType: "soinvie", value: 0 },
       ],
@@ -1973,7 +1484,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 },
         { subType: "soinvie", value: 0 },
       ],
@@ -2003,7 +1514,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 },
         { subType: "soinvie", value: 0 },
       ],
@@ -2031,7 +1542,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 },
         { subType: "soinvie", value: 0 },
       ],
@@ -2061,7 +1572,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 },
         { subType: "soinvie", value: 0 },
       ],
@@ -2089,7 +1600,7 @@ export const monthData = {
         { subType: "shopping", value: 0 },
         { subType: "sac", value: 0 },
       ],
-      phoneCall: [
+      indicadores: [
         { subType: "clean-up", value: 0 },
         { subType: "soinvie", value: 0 },
       ],
