@@ -87,13 +87,6 @@ export type DataPerSellerPerMonth = {
   [key in months]: DataPerSeller;
 };
 
-export type Seller = {
-  name: string;
-  status: boolean;
-  quantity: number;
-  disabled?: boolean;
-};
-
 export const yearData = {
   2020: {
     jan: {

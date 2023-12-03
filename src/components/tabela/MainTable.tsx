@@ -24,6 +24,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Label } from "../ui/label";
 import { Button } from "../ui/button";
 import useMainTableSellerData from "./useMainTableSellerData";
+import Testao from "./useMainTableDataTeste";
 
 export default function MainTable() {
   const { colTypes, months, years, dataMatrix, resetData, changeSelectedYear } =
@@ -32,11 +33,14 @@ export default function MainTable() {
   const {
     sellerDataMatrix,
     changeSelectedMonth,
-    changeCellValue,
     sellerColTypes,
     selectedMonth,
     resetSellerData,
   } = useMainTableSellerData();
+
+  const {
+    changeCellValue,
+  } = Testao();
 
   const allColumns = Object.values(colTypes)
     .flat()
@@ -223,14 +227,13 @@ export default function MainTable() {
                                         }
                                         if (index2 < sum + colTypeLenght) {
                                           changeCellValue(
+                                            year,
                                             month as months,
-                                            "",
                                             Object.keys(colTypes)[
                                             index3
                                             ] as Media,
                                             allColumns[index2],
-                                            cellValue
-                                          );
+                                            cellValue                                          );
                                           return (sum = -1);
                                         }
                                         return (sum += colTypeLenght);
