@@ -100,7 +100,8 @@ export default function MainTable() {
                   {!month
                     ? years.map((year, index) => {
                         return (
-                          <SelectItem key={index} value={year.toString()}>
+                          <SelectItem key={index
+                          } value={year.toString()}>
                             {year}
                           </SelectItem>
                         );
@@ -126,15 +127,10 @@ export default function MainTable() {
                   className="px-4 py-2 border border-gray-400 bg-gray-200"
                   id={colType}
                 >
+                  {/* Parte do menu de cima que lista receita, saídas e indicadores financeiros */}
                   <div className="flex items-center justify-center gap-2 w-full">
                     <div className="w-max items-center flex gap-2">
                       {translateMedia(colType as Media)}
-                      {!month ? (
-                        <>
-                          <UpdateColDialog id={colType} />
-                          <AddColDialog id={colType} />
-                        </>
-                      ) : null}
                     </div>
                   </div>
                 </th>
@@ -148,6 +144,7 @@ export default function MainTable() {
                   key={index}
                   className="border border-gray-400 px-2 text-center py-1 bg-gray-200"
                 >
+                   {/* Lista de categorias de cada coluna: recorrente, não recorrente... */}
                   {column.charAt(0).toUpperCase() + column.slice(1)}
                 </th>
               );
@@ -162,8 +159,9 @@ export default function MainTable() {
                     <td
                       className="border border-gray-400 px-4 py-2 bg-gray-200
                   hover:bg-gray-300 cursor-pointer"
-                      onClick={() => setMonth(month)}
+                     
                     >
+                      {/* Lista os meses*/}
                       <p className="m-0 font-bold mb-1">
                         {translateMonth(month as months)}
                       </p>
