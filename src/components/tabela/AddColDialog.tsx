@@ -26,12 +26,9 @@ export default function AddColDialog({ id }: AddColDialogProps) {
   const { addCol, resetData } = useMainTableData();
 
   const colTypes = [
-    ["phoneCall", "Ligação telefônica"],
-    ["soinvieMail", "Email soinvie"],
-    ["cleanUpMail", "Email clean-up"],
-    ["pipefy", "Pipefy"],
-    ["soinvieWhatsapp", "WhatsApp soinvie"],
-    ["cleanUpWhatsapp", "WhatsApp clean-up"],
+    ["indicadores", "Indicadores financeiros"],
+    ["receita", "Receita"],
+    ["retirada", "Saídas"],
   ];
 
   return (
