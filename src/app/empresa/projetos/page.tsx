@@ -82,8 +82,6 @@ export default function About() {
         <div className="w-[calc(100vw-6em-4rem)] flex flex-col md:flex-row items-center justify-between mt-2 mx-auto">
           <h1 className='mt-0 mb-2'>Gerenciamento</h1>
           <div className='flex flex-wrap gap-2 sm:gap-4 md:gap-8'>
-            <RegisterFinance companyId={cmpId} categories={financeCategories} />
-            <FinanceVisualization data={finances} />
             <LoginProjectsProvider getBoards={getBoards} cmpId={cmpId} />
           </div>
         </div>

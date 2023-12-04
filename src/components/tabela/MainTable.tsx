@@ -65,7 +65,7 @@ export default function MainTable() {
               <ArrowLeft />
             </span>
           )}
-          Relatório{" "}
+          Relatório financeiro{" "}
           {month
             ? "de " + translateMonth(month as months) + " de " + year.toString()
             : year.toString()}
