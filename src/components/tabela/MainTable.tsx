@@ -9,8 +9,6 @@ import {
   SelectValue,
 } from "../ui/select";
 import { ArrowLeft, Minus, Plus } from "lucide-react";
-import AddColDialog from "./AddColDialog";
-import UpdateColDialog from "./UpdateColDialog";
 import useMainTableData from "./useMainTableData";
 import {
   Media,
@@ -56,12 +54,12 @@ export default function MainTable() {
   const [cellValue, setCellValue] = useState(0);
 
   return (
-    <div className="text-xs overflow-auto max-h-full max-w-full rounded-sm border-gray-500 border-2 bg-[#f3f4f6] shadow-2xl xl:text-sm">
+    <div className="text-xs overflow-auto max-h-full max-w-full xl:text-sm">
       <table className="table-auto">
-        <caption className="relative py-4 text-xl border border-gray-400 bg-[#e0e0e0]">
+        <caption className="relative py-4 text-xl">
           {month && (
             <span
-              className="absolute -translate-y-1/2 top-1/2 p-2 left-8 cursor-pointer hover:bg-gray-400 border border-gray-500 rounded-full"
+              className="absolute -translate-y-1/2 top-1/2 p-2 left-8 cursor-pointer hover:bg-[#26282A] border border-[#26282A]"
               onClick={() => setMonth(undefined)}
             >
               <ArrowLeft />
@@ -76,7 +74,7 @@ export default function MainTable() {
           <tr className="">
             <th
               rowSpan={2}
-              className="px-4 py-2 border border-gray-400 bg-gray-200"
+              className="px-4 py-2 border border-[#26282A] bg-[#101214]"
             >
               <Select
                 onValueChange={
@@ -96,7 +94,7 @@ export default function MainTable() {
                 }
                 value={month ? month : year.toString()}
               >
-                <SelectTrigger className="border border-gray-400 bg-[#f3f4f6]">
+                <SelectTrigger className="color-t bg-[#101214]">
                   <SelectValue placeholder="Ano" />
                 </SelectTrigger>
                 <SelectContent>
@@ -127,7 +125,7 @@ export default function MainTable() {
                     Object.values(colTypes[colType as keyof typeof colTypes])
                       .length
                   }
-                  className="px-4 py-2 border border-gray-400 bg-gray-200"
+                  className="px-4 py-2 border border-[#26282A] bg-[#26282A]"
                   id={colType}
                 >
                   {/* Parte do menu de cima que lista receita, saídas e indicadores financeiros */}
@@ -145,7 +143,7 @@ export default function MainTable() {
               return (
                 <th
                   key={index}
-                  className="border border-gray-400 px-2 text-center py-1 bg-gray-200"
+                  className="border border-[#26282A] px-2 text-center py-1 bg-[#101214]"
                 >
                   {/* Lista de categorias de cada coluna: recorrente, não recorrente... */}
                   {column.charAt(0).toUpperCase() + column.slice(1)}
@@ -160,8 +158,8 @@ export default function MainTable() {
               return (
                 <tr key={index}>
                   <td
-                    className="border border-gray-400 px-4 py-2 bg-gray-200
-                  hover:bg-gray-300 cursor-pointer"
+                    className="border border-[#26282A] px-4 py-2 bg-[#070708]
+                  hover:bg-[#26282A] cursor-pointer"
 
                   >
                     {/* Lista os meses*/}
@@ -173,8 +171,8 @@ export default function MainTable() {
                     return (
                       <td
                         key={index2}
-                        className={`border border-gray-300 text-center w-full h-full ${data.isEditable
-                          ? "hover:bg-gray-300 cursor-pointer bg-yellow-100"
+                        className={`border border-[#26282A] text-center w-full h-full ${data.isEditable
+                          ? "hover:bg-[#26282A] cursor-pointer"
                           : ""
                           }`}
                       >
