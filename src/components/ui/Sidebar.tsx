@@ -29,7 +29,7 @@ export default function Sidebar({sidebarItems}: SidebarProps) {
                 <div>
                     <div className="sidebar__top">
                         <Image
-                            src="https://i.imgur.com/HI8Xaw5.png"
+                            src="/img/logo.svg"
                             width={80}
                             height={80}
                             className="sidebar__logo"
