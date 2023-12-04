@@ -193,56 +193,38 @@ export default function MainTable() {
                                 Editar valor da célula
                               </Label>
                               <div className="flex gap-4">
-                                <Button
-                                  className="p-1 h-1/2 self-center"
-                                  variant="outline"
-                                  onClick={() => {
-                                    setCellValue(cellValue - 1);
-                                  }}
-                                >
-                                  <Minus size={16} />
-                                </Button>
-                                <div className="w-fit m-auto py-1 px-4 border border-gray-500 shadow-xl rounded-md">
-                                  {cellValue}
-                                </div>
-                                <Button
-                                  className="p-1 h-1/2 self-center"
-                                  variant="outline"
-                                  onClick={() => {
-                                    setCellValue(cellValue + 1);
-                                  }}
-                                >
-                                  <Plus size={16} />
-                                </Button>
+                                <input
+                                  className="flex h-10 w-full text-black rounded-md border border-input bg-white px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                  type="number"
+                                  value={cellValue}
+                                  onChange={(e) => setCellValue(Number(e.target.value))}
+                                />
+
                                 <Button
                                   onClick={() => {
                                     let sum = 0;
-                                    colTypesLenghtArray.map(
-                                      (colTypeLenght, index3) => {
-                                        if (sum === -1) {
-                                          console.log("sum is -1");
-                                          return null;
-                                        }
-                                        if (index2 < sum + colTypeLenght) {
-                                          changeCellValue(
-                                            year,
-                                            month as months,
-                                            Object.keys(colTypes)[
-                                            index3
-                                            ] as Media,
-                                            allColumns[index2],
-                                            cellValue);
-                                          return (sum = -1);
-                                        }
-                                        return (sum += colTypeLenght);
+                                    colTypesLenghtArray.map((colTypeLength, index3) => {
+                                      if (sum === -1) {
+                                        console.log("sum is -1");
+                                        return null;
                                       }
-                                    );
+                                      if (index2 < sum + colTypeLength) {
+                                        changeCellValue(
+                                          year,
+                                          month as months,
+                                          Object.keys(colTypes)[index3] as Media,
+                                          allColumns[index2],
+                                          cellValue
+                                        );
+                                        return (sum = -1);
+                                      }
+                                      return (sum += colTypeLength);
+                                    });
                                     resetSellerData();
                                   }}
                                 >
                                   Salvar
-                                </Button>
-                              </div>
+                                </Button></div>
                             </PopoverContent>
                           </Popover>
                         ) : (
