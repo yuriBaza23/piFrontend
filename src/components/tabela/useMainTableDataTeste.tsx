@@ -54,7 +54,7 @@ const calcularReceitaBruta = (
   }
 };
 
-// Função para calcular a Taxa de Crescimento da Receita Bruta
+// Função para calcular a Taxa de Crescimento
 const calcularTaxaCrescimento = (
   newData: DataPerYear,
   year: string,
@@ -82,7 +82,7 @@ const calcularTaxaCrescimento = (
     const mesAnterior: months = month === "jan" ? "dez" : mesAnteriorMap[month];
 
     const valorReceitaAtual =
-    newData[year][month][col].find((c: ColData) => c.subType === subtipoBruta)
+      newData[year][month][col].find((c: ColData) => c.subType === subtipoBruta)
         ?.value ?? 0;
 
     const valorReceitaAnterior =
@@ -90,10 +90,10 @@ const calcularTaxaCrescimento = (
         (c: ColData) => c.subType === subtipoBruta
       )?.value ?? 0;
 
-    const  taxaCrescimento=
+    const taxaCrescimento =
       valorReceitaAnterior !== 0
-      ? parseFloat(((valorReceitaAtual / valorReceitaAnterior - 1) * 100).toFixed(2))
-      : 0;
+        ? parseFloat(((valorReceitaAtual / valorReceitaAnterior - 1) * 100).toFixed(2))
+        : 0;
 
     // Armazenar a Taxa de Crescimento na coluna Indicadores
     const itemTaxaCrescimento = newData[year][month]["indicadores"].find(
@@ -104,6 +104,45 @@ const calcularTaxaCrescimento = (
       itemTaxaCrescimento.value = taxaCrescimento;
     }
   }
+};
+
+// Função para calcular Receita Líquida
+const calcularReceitaLiquida = (
+  newData: DataPerYear,
+  year: string,
+  month: months,
+  col: Media
+) => {
+  const subtipoBruta = "Bruta";
+  const subtipoDeducoes = "Deduções";
+  const subtipoImposto = "Imposto";
+  const subtipoReceitaLiquida = "Receita líquida";
+
+  const valorReceitaBruta =
+    newData[year][month]["receita"].find(
+      (c: ColData) => c.subType === subtipoBruta
+    )?.value ?? 0;
+
+  const valorDeducoes =
+    newData[year][month]["retirada"].find(
+      (c: ColData) => c.subType === subtipoDeducoes
+    )?.value ?? 0;
+
+  const valorImposto =
+    newData[year][month]["retirada"].find(
+      (c: ColData) => c.subType === subtipoImposto
+    )?.value ?? 0;
+
+  const resultado = valorReceitaBruta - valorDeducoes - valorImposto;
+
+  const itemReceitaLiquida = newData[year][month]["indicadores"].find(
+    (c: ColData) => c.subType === subtipoReceitaLiquida
+  );
+
+  if (itemReceitaLiquida) {
+    itemReceitaLiquida.value = resultado;
+  }
+
 };
 
 const Testao = create<SellerYearProps>()(
@@ -154,6 +193,7 @@ const Testao = create<SellerYearProps>()(
         // Chamada das funções para calcular a Receita Bruta e a Taxa de Crescimento
         calcularReceitaBruta(newData, year, month, col);
         calcularTaxaCrescimento(newData, year, month, col);
+        calcularReceitaLiquida(newData, year, month, col);
 
         // Retorne o estado atualizado
         return {
