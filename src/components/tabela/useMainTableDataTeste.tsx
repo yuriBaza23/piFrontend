@@ -145,6 +145,40 @@ const calcularReceitaLiquida = (
 
 };
 
+// Função para calcular Lucro Líquido
+const calcularLucroLiquido = (
+  newData: DataPerYear,
+  year: string,
+  month: months,
+  col: Media
+) => {
+  const subtipoLucroBruto = "Lucro bruto";
+  const subtipoDespesas = "Despesas";
+  const subtipoLucroLiquido = "Lucro líquido";
+
+  const valorLucroBruto =
+    newData[year][month]["receita"].find(
+      (c: ColData) => c.subType === subtipoLucroBruto
+    )?.value ?? 0;
+
+  const valorDespesas =
+    newData[year][month]["retirada"].find(
+      (c: ColData) => c.subType === subtipoDespesas
+    )?.value ?? 0;
+
+
+  const resultado = valorLucroBruto - valorDespesas;
+
+  const itemLucroLiquido = newData[year][month]["indicadores"].find(
+    (c: ColData) => c.subType === subtipoLucroLiquido
+  );
+
+  if (itemLucroLiquido) {
+    itemLucroLiquido.value = resultado;
+  }
+
+};
+
 const Testao = create<SellerYearProps>()(
   (set, get): SellerYearProps => ({
     selectedYear: yearData
@@ -194,6 +228,7 @@ const Testao = create<SellerYearProps>()(
         calcularReceitaBruta(newData, year, month, col);
         calcularTaxaCrescimento(newData, year, month, col);
         calcularReceitaLiquida(newData, year, month, col);
+        calcularLucroLiquido(newData, year, month, col);
 
         // Retorne o estado atualizado
         return {
