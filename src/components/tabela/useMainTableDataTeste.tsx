@@ -21,6 +21,40 @@ interface SellerYearProps {
   selectedYear?: string;
 }
 
+const calcularReceitaBruta = (
+  newData: DataPerYear,
+  year: string,
+  month: months,
+  col: Media
+) => {
+  const subtipoRecorrente = "Recorrente";
+  const subtipoNaoRecorrente = "Não recorrente";
+  const subtipoBruta = "Bruta";
+
+  if (col === "receita") {
+    const valorRecorrente =
+      newData[year][month][col].find(
+        (c: ColData) => c.subType === subtipoRecorrente
+      )?.value ?? 0;
+
+    const valorNaoRecorrente =
+      newData[year][month][col].find(
+        (c: ColData) => c.subType === subtipoNaoRecorrente
+      )?.value ?? 0;
+
+    const resultado = valorRecorrente + valorNaoRecorrente;
+
+    const itemBruta = newData[year][month][col].find(
+      (c: ColData) => c.subType === subtipoBruta
+    );
+
+    if (itemBruta) {
+      itemBruta.value = resultado;
+    }
+  }
+};
+
+
 const Testao = create<SellerYearProps>()(
   (set, get): SellerYearProps => ({
     selectedYear: yearData
@@ -66,39 +100,11 @@ const Testao = create<SellerYearProps>()(
         newData[year][month][col] = newData[year][month][col].map((c: ColData) =>
           c.subType === colType ? { ...c, value: value } : c
         ) as ColData[];
+        // Chamada das funções para calcular a Receita Bruta e a Taxa de Crescimento
+        calcularReceitaBruta(newData, year, month, col);
+        //calcularTaxaCrescimento(newData, year, month, col);
 
-        // Receita
-        const subtipoRecorrente = "Recorrente";
-        const subtipoNaoRecorrente = "Não recorrente";
-        const subtipoBruta = "Bruta";
-        
-        if (col === "receita" && (colType === subtipoRecorrente || colType === subtipoNaoRecorrente)) {
-          // Obtendo os valores dos subtipos "Recorrente" e "Não recorrente"
-          const valorRecorrente = newData[year][month][col].find(
-            (c: ColData) => c.subType === subtipoRecorrente
-          )?.value ?? 0;
-        
-          const valorNaoRecorrente = newData[year][month][col].find(
-            (c: ColData) => c.subType === subtipoNaoRecorrente
-          )?.value ?? 0;
-        
-          // Calculando a soma dos valores
-          const resultado = valorRecorrente + valorNaoRecorrente;
-        
-          // Atualizando o valor do subtipo "Bruta"
-          const itemBruta = newData[year][month][col].find(
-            (c: ColData) => c.subType === subtipoBruta
-          );
-        
-          if (itemBruta) {
-            itemBruta.value = resultado;
-          }
-          // Retorne o estado atualizado
-          return {
-            ...state,
-            mainData: newData,
-          };
-        }
+        // Retorne o estado atualizado
         return {
           ...state,
           mainData: newData,
