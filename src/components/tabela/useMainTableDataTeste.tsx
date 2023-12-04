@@ -54,6 +54,57 @@ const calcularReceitaBruta = (
   }
 };
 
+// Função para calcular a Taxa de Crescimento da Receita Bruta
+const calcularTaxaCrescimento = (
+  newData: DataPerYear,
+  year: string,
+  month: months,
+  col: Media
+) => {
+  const subtipoBruta = "Bruta";
+  const subtipoTaxaCrescimento = "Taxa de crescimento";
+  const mesAnteriorMap: { [key in months]: months } = {
+    "jan": "dez",
+    "fev": "jan",
+    "mar": "fev",
+    "abr": "mar",
+    "mai": "abr",
+    "jun": "mai",
+    "jul": "jun",
+    "ago": "jul",
+    "set": "ago",
+    "out": "set",
+    "nov": "out",
+    "dez": "nov",
+  };
+
+  if (col === "receita") {
+    const mesAnterior: months = month === "jan" ? "dez" : mesAnteriorMap[month];
+
+    const valorReceitaAtual =
+    newData[year][month][col].find((c: ColData) => c.subType === subtipoBruta)
+        ?.value ?? 0;
+
+    const valorReceitaAnterior =
+      newData[year][mesAnterior][col].find(
+        (c: ColData) => c.subType === subtipoBruta
+      )?.value ?? 0;
+
+    const  taxaCrescimento=
+      valorReceitaAnterior !== 0
+      ? parseFloat(((valorReceitaAtual / valorReceitaAnterior - 1) * 100).toFixed(2))
+      : 0;
+
+    // Armazenar a Taxa de Crescimento na coluna Indicadores
+    const itemTaxaCrescimento = newData[year][month]["indicadores"].find(
+      (c: ColData) => c.subType === subtipoTaxaCrescimento
+    );
+
+    if (itemTaxaCrescimento) {
+      itemTaxaCrescimento.value = taxaCrescimento;
+    }
+  }
+};
 
 const Testao = create<SellerYearProps>()(
   (set, get): SellerYearProps => ({
@@ -102,7 +153,7 @@ const Testao = create<SellerYearProps>()(
         ) as ColData[];
         // Chamada das funções para calcular a Receita Bruta e a Taxa de Crescimento
         calcularReceitaBruta(newData, year, month, col);
-        //calcularTaxaCrescimento(newData, year, month, col);
+        calcularTaxaCrescimento(newData, year, month, col);
 
         // Retorne o estado atualizado
         return {
