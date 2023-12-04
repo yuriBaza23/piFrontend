@@ -56,7 +56,7 @@ export default function MainTable() {
   return (
     <div className="text-xs overflow-auto max-h-full max-w-full xl:text-sm">
       <table className="table-auto">
-        <caption className="relative py-4 text-xl">
+        <caption className="relative py-4 text-xl bg-[#26282A]">
           {month && (
             <span
               className="absolute -translate-y-1/2 top-1/2 p-2 left-8 cursor-pointer hover:bg-[#26282A] border border-[#26282A]"
@@ -125,7 +125,7 @@ export default function MainTable() {
                     Object.values(colTypes[colType as keyof typeof colTypes])
                       .length
                   }
-                  className="px-4 py-2 border border-[#26282A] bg-[#26282A]"
+                  className="px-4 py-2 border border-[#26282A] bg-[#070708]"
                   id={colType}
                 >
                   {/* Parte do menu de cima que lista receita, saídas e indicadores financeiros */}
@@ -231,7 +231,7 @@ export default function MainTable() {
                                             index3
                                             ] as Media,
                                             allColumns[index2],
-                                            cellValue                                          );
+                                            cellValue);
                                           return (sum = -1);
                                         }
                                         return (sum += colTypeLenght);
