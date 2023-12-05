@@ -11,10 +11,10 @@ interface SidebarItems {
     icon: any;
 }
 interface SidebarProps {
-    sidebarItems?: SidebarItems[]; 
+    sidebarItems?: SidebarItems[];
 }
-  
-export default function Sidebar({sidebarItems}: SidebarProps) {
+
+export default function Sidebar({ sidebarItems }: SidebarProps) {
     const { signOut } = useAuth();
     const router = useRouter();
 
@@ -36,10 +36,10 @@ export default function Sidebar({sidebarItems}: SidebarProps) {
                             alt="logo" />
                     </div>
                     <ul className="sidebar__list">
-                        {sidebarItems?.map(({name, href, icon: Icon}) => (
+                        {sidebarItems?.map(({ name, href, icon: Icon }) => (
                             <li className="sidebar__item" key={name}>
-                                <Link href={href} className="sidebar__link">
-                                    <span className="sidebar__icon"><Icon/></span>
+                                <Link href={href} className="sidebar__link" title={name}>
+                                    <span className="sidebar__icon"><Icon /></span>
                                 </Link>
                             </li>
                         ))}
@@ -48,13 +48,13 @@ export default function Sidebar({sidebarItems}: SidebarProps) {
 
                 <ul className="sidebar__list">
                     <li className="sidebar__item" key='logout'>
-                        <button className="sidebar__link power" onClick={logout}>
-                            <span className="sidebar__icon"><BsPower/></span>
+                        <button className="sidebar__link power" onClick={logout} title='logout'>
+                            <span className="sidebar__icon"><BsPower /></span>
                         </button>
                     </li>
                 </ul>
             </aside>
         </div>
-        
+
     );
 }

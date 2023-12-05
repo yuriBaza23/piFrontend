@@ -247,3 +247,9 @@ h2 {
 .color-t {
   color: white;
 }
+
+.egg-mask {
+  width: 4em;
+  height: 5.2em;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
