@@ -11,6 +11,8 @@ import api from "../../../lib/api";
 import ProjectManager from "../../../components/ui/projectManager";
 import { LoginProjectsProvider } from "../../../components/ui/loginProjectsProvider";
 import localApi from "../../../lib/localApi";
+import { get } from "http";
+
 
 export default function About() {
   const [_, setMyId] = useState("");
@@ -18,6 +20,7 @@ export default function About() {
   const [finances, setFinances] = useState<any[]>([])
   const [projects, setProjects] = useState<any[]>([])
   const [projectsPermissions, setProjectsPermissions] = useState<any[]>([])
+  const [financeCategories, setFinanceCategories] = useState<FinanceCategories>({ revenue: [], expense: [] });
 
   const getMyIds = useCallback(async () => {
     const myId = localStorage.getItem('@pi_myId');
@@ -35,18 +38,36 @@ export default function About() {
     }
   }, [cmpId])
 
+  const getFinanceCategories = useCallback(async () => {
+    if (cmpId) {
+      const res = await api.get(`category/company/${cmpId}`);
+      const categories: CategoryObject[] = res.data;
+      
+      const revenueCategories = categories
+        .filter(category => category.type === 'revenue')
+        .map(category => ({ id: category.id, name: category.name }));
+  
+      const expenseCategories = categories
+        .filter(category => category.type === 'expense')
+        .map(category => ({ id: category.id, name: category.name }));
+  
+      setFinanceCategories({ revenue: revenueCategories, expense: expenseCategories });
+    }
+  }, [cmpId]);
+  
+  
   const getBoards = useCallback(async () => {
     const token = localStorage.getItem('@pi_trello_token')
-    if(token && cmpId) {
+    if (token && cmpId) {
       const res = await fetch(`https://api.trello.com/1/members/me/boards?key=${process.env.NEXT_PUBLIC_TRELLO_API_KEY}&token=${token}`)
       const data = await res.json()
       const boards = data.map((board: any) => board.id)
-      const createPermissions = await localApi.post('api/projects', { 
+      const createPermissions = await localApi.post('api/projects', {
         company: cmpId,
         boards,
         token
       })
-      if(createPermissions.status === 200) {
+      if (createPermissions.status === 200) {
         setProjectsPermissions(createPermissions.data.boards)
       }
       setProjects(data)
@@ -59,7 +80,8 @@ export default function About() {
   useEffect(() => {
     getMyIds()
     getFinance()
-  }, [getMyIds, getFinance])
+    getFinanceCategories()
+  }, [getMyIds, getFinance, getFinanceCategories])
 
   useEffect(() => {
     getBoards()
@@ -69,20 +91,20 @@ export default function About() {
     <div className="layout">
       <Sidebar sidebarItems={sidebarCmpItems} />
       <div className="content">
-      <div className="w-[calc(100vw-6em-4rem)] flex flex-col md:flex-row items-center justify-between mt-2 mx-auto">
+        <div className="w-[calc(100vw-6em-4rem)] flex flex-col md:flex-row items-center justify-between mt-2 mx-auto">
           <h1 className='mt-0 mb-2'>Gerenciamento</h1>
           <div className='flex flex-wrap gap-2 sm:gap-4 md:gap-8'>
-            <RegisterFinance companyId={cmpId}/>
-            <FinanceVisualization data={finances}/>
-            <LoginProjectsProvider getBoards={getBoards} cmpId={cmpId}/>
+            <RegisterFinance companyId={cmpId} categories={financeCategories} />
+            <FinanceVisualization data={finances} />
+            <LoginProjectsProvider getBoards={getBoards} cmpId={cmpId} />
           </div>
         </div>
         <Separator />
         <div className='w-[calc(100vw-6em-4rem)] md:flex-row items-center justify-between mt-2 mx-auto'>
           <Spacer x={4} />
-          <ProjectManager 
-            projects={projects} 
-            projectsPermissions={projectsPermissions} 
+          <ProjectManager
+            projects={projects}
+            projectsPermissions={projectsPermissions}
             cmpId={cmpId}
             getBoards={getBoards}
           />

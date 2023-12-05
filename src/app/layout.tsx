@@ -16,7 +16,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="https://i.imgur.com/HI8Xaw5.png" />
+        <link rel="icon" href="/img/favicon.svg" />
       </head>
       <body className={inter.className}>
         <AuthProvider>
