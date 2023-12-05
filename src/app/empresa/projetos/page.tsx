@@ -13,13 +13,14 @@ import { LoginProjectsProvider } from "../../../components/ui/loginProjectsProvi
 import localApi from "../../../lib/localApi";
 import { get } from "http";
 
+
 export default function About() {
   const [_, setMyId] = useState("");
   const [cmpId, setCmpId] = useState("");
   const [finances, setFinances] = useState<any[]>([])
   const [projects, setProjects] = useState<any[]>([])
   const [projectsPermissions, setProjectsPermissions] = useState<any[]>([])
-  const [financeCategories, setFinanceCategories] = useState({ revenue: [], expense: [] });
+  const [financeCategories, setFinanceCategories] = useState<FinanceCategories>({ revenue: [], expense: [] });
 
   const getMyIds = useCallback(async () => {
     const myId = localStorage.getItem('@pi_myId');
@@ -39,11 +40,22 @@ export default function About() {
 
   const getFinanceCategories = useCallback(async () => {
     if (cmpId) {
-      const res = await api.get(`finance/company/categories/${cmpId}`);
-      setFinanceCategories(res.data)
+      const res = await api.get(`category/company/${cmpId}`);
+      const categories: CategoryObject[] = res.data;
+      
+      const revenueCategories = categories
+        .filter(category => category.type === 'revenue')
+        .map(category => ({ id: category.id, name: category.name }));
+  
+      const expenseCategories = categories
+        .filter(category => category.type === 'expense')
+        .map(category => ({ id: category.id, name: category.name }));
+  
+      setFinanceCategories({ revenue: revenueCategories, expense: expenseCategories });
     }
-  }, [cmpId])
-
+  }, [cmpId]);
+  
+  
   const getBoards = useCallback(async () => {
     const token = localStorage.getItem('@pi_trello_token')
     if (token && cmpId) {

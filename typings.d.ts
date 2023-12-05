@@ -21,4 +21,21 @@ interface Todo {
 
 type Finance = "expense" | "revenue";
 
-type FinanceCategories = Record<Finance, Set<string>>;
+interface CategoryObject {
+  id: string;
+  name: string;
+  type: 'revenue' | 'expense';
+  companyId: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+interface Category {
+  id?: string;
+  name: string;
+}
+
+interface FinanceCategories {
+  revenue: Category[];
+  expense: Category[];
+}

@@ -47,7 +47,7 @@
     "postcss": "8.4.28",
     "react": "18.2.0",
     "react-beautiful-dnd": "^13.1.1",
-    "react-currency-input-field": "^3.6.11",
+    "react-currency-input-field": "^3.6.12",
     "react-day-picker": "^8.8.2",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.46.1",
