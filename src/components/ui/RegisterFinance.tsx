@@ -229,7 +229,7 @@ const RegisterFinance = ({ companyId, categories: categoriesProp }: RegisterFina
                   setNewFinanceType(e.target.value as Finance);
                   setNewFinanceCategory(null);
                 }}
-                className="select select-bordered flex w-full mb-4 text-gray-500"
+                className="select select-bordered flex w-full mb-4 text-gray-400"
               >
                 <option value="revenue">Receita</option>
                 <option value="expense">Despesa</option>
@@ -246,15 +246,12 @@ const RegisterFinance = ({ companyId, categories: categoriesProp }: RegisterFina
                       setIsAddingNewCategory(true);
                     }
                   }}
-                  className="select select-bordered flex w-full mb-4 text-gray-500"
+                  className="select select-bordered flex w-full mb-4 text-gray-400"
                 >
-                  <option disabled value="">
-                    Selecione a categoria
-                  </option>
                   {categoriesState[newFinanceType].map((cat) => (
-                    <option key={cat.id || cat.name} value={cat.name}> {cat.name} {cat.id ? `(${cat.id})` : ''}</option>
+                    <option className="p-10 m-10 text-md text-gray-400" key={cat.id || cat.name} value={cat.name}> {cat.name}</option>
                   ))}
-                  <option value="add_new">Adicionar nova categoria</option>
+                  <option value="add_new" className="bg-yellow-600 text-white font-bold">+ Adicionar nova categoria</option>
                 </select>
               )}
               {isAddingNewCategory && (
