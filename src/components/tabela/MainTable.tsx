@@ -23,6 +23,8 @@ import { Label } from "../ui/label";
 import { Button } from "../ui/button";
 import useMainTableSellerData from "./useMainTableSellerData";
 import Testao from "./useMainTableDataTeste";
+import AddColDialog from "./AddColDialog";
+import UpdateColDialog from "./UpdateColDialog";
 
 export default function MainTable() {
   const { colTypes, months, years, dataMatrix, resetData, changeSelectedYear } =
@@ -132,6 +134,12 @@ export default function MainTable() {
                   <div className="flex items-center justify-center gap-2 w-full">
                     <div className="w-max items-center flex gap-2">
                       {translateMedia(colType as Media)}
+                      {!month ? (
+                        <>
+                          <UpdateColDialog id={colType} />
+                          <AddColDialog id={colType} />
+                        </>
+                      ) : null}
                     </div>
                   </div>
                 </th>
