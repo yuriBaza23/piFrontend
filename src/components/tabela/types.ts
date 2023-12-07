@@ -94,7 +94,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -104,7 +103,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     fev: {
@@ -112,7 +110,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -122,7 +119,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     mar: {
@@ -130,7 +126,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -140,7 +135,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     abr: {
@@ -148,7 +142,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -158,7 +151,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     mai: {
@@ -166,7 +158,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -176,7 +167,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     jun: {
@@ -184,7 +174,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -194,7 +183,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     jul: {
@@ -202,7 +190,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -212,7 +199,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     ago: {
@@ -220,7 +206,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -230,7 +215,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     set: {
@@ -238,7 +222,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -248,7 +231,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     out: {
@@ -256,7 +238,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -266,7 +247,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     nov: {
@@ -274,7 +254,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -284,7 +263,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     dez: {
@@ -292,7 +270,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -302,7 +279,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
   },
@@ -312,7 +288,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -322,7 +297,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     fev: {
@@ -330,7 +304,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -340,7 +313,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     mar: {
@@ -348,7 +320,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -358,7 +329,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     abr: {
@@ -366,7 +336,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -376,7 +345,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     mai: {
@@ -384,7 +352,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -394,7 +361,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     jun: {
@@ -402,7 +368,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -412,7 +377,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     jul: {
@@ -420,7 +384,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -430,7 +393,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     ago: {
@@ -438,7 +400,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -448,7 +409,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     set: {
@@ -456,7 +416,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -466,7 +425,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     out: {
@@ -474,7 +432,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -484,7 +441,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     nov: {
@@ -492,7 +448,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -502,7 +457,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     dez: {
@@ -510,7 +464,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -520,7 +473,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
   },
@@ -530,7 +482,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -540,7 +491,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     fev: {
@@ -548,7 +498,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -558,7 +507,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     mar: {
@@ -566,7 +514,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -576,7 +523,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     abr: {
@@ -584,7 +530,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -594,7 +539,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     mai: {
@@ -602,7 +546,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -612,7 +555,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     jun: {
@@ -620,7 +562,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -630,7 +571,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     jul: {
@@ -638,7 +578,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -648,7 +587,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     ago: {
@@ -656,7 +594,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -666,7 +603,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     set: {
@@ -674,7 +610,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -684,7 +619,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     out: {
@@ -692,7 +626,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -702,7 +635,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     nov: {
@@ -710,7 +642,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -720,7 +651,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     dez: {
@@ -728,7 +658,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -738,7 +667,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
   },
@@ -748,7 +676,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -758,7 +685,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     fev: {
@@ -766,7 +692,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -776,7 +701,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     mar: {
@@ -784,7 +708,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -794,7 +717,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     abr: {
@@ -802,7 +724,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -812,7 +733,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     mai: {
@@ -820,7 +740,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -830,7 +749,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     jun: {
@@ -838,7 +756,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -848,7 +765,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     jul: {
@@ -856,7 +772,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -866,7 +781,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     ago: {
@@ -874,7 +788,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -884,7 +797,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     set: {
@@ -892,7 +804,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -902,7 +813,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     out: {
@@ -910,7 +820,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -920,7 +829,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     nov: {
@@ -928,7 +836,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -938,7 +845,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
     dez: {
@@ -946,7 +852,6 @@ export const yearData = {
         { subType: "Recorrente", value: 0, isEditable: true },
         { subType: "Não recorrente", value: 0, isEditable: true },
         { subType: "Bruta", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
       retirada: [
         { subType: "Despesas", value: 0, isEditable: true },
@@ -956,7 +861,6 @@ export const yearData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: false },
         { subType: "Receita líquida", value: 0, isEditable: false },
-        { subType: "Lucro líquido", value: 0, isEditable: false },
       ],
     },
   },
@@ -978,7 +882,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
     Marcelo: {
@@ -995,7 +898,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
   },
@@ -1014,7 +916,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
     Marcelo: {
@@ -1031,7 +932,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
   },
@@ -1050,7 +950,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
     Marcelo: {
@@ -1067,7 +966,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
   },
@@ -1086,7 +984,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
     Marcelo: {
@@ -1103,7 +1000,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
   },
@@ -1122,7 +1018,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
     Marcelo: {
@@ -1139,7 +1034,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
   },
@@ -1158,7 +1052,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
     Marcelo: {
@@ -1175,7 +1068,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
   },
@@ -1194,7 +1086,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
     Marcelo: {
@@ -1211,7 +1102,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
   },
@@ -1230,7 +1120,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
     Marcelo: {
@@ -1247,7 +1136,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
   },
@@ -1266,7 +1154,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
     Marcelo: {
@@ -1283,7 +1170,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
   },
@@ -1302,7 +1188,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
     Marcelo: {
@@ -1319,7 +1204,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
   },
@@ -1338,7 +1222,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
     Marcelo: {
@@ -1355,7 +1238,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
   },
@@ -1374,7 +1256,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
     Marcelo: {
@@ -1391,7 +1272,6 @@ export const monthData = {
       indicadores: [
         { subType: "Taxa de crescimento", value: 0, isEditable: true },
         { subType: "Receita líquida", value: 0, isEditable: true },
-        { subType: "Lucro bruto", value: 0, isEditable: true },
       ],
     },
   },

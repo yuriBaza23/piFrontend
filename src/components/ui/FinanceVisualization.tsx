@@ -2,7 +2,6 @@
 
 import Modal from "./Modal";
 import { FormEventHandler, useState } from "react";
-import { useRouter } from "next/navigation";
 import {
     Table,
     TableBody,
@@ -19,6 +18,7 @@ export interface Finance {
     name: string;
     type: "revenue" | "expense";
     value: number;
+    category: string;
     createdAt: string;
 }
 
@@ -55,6 +55,7 @@ const FinanceVisualization = ({ data }: RegisterFinanceProps) => {
                                         <TableHead>Data</TableHead>
                                         <TableHead>Nome do item</TableHead>
                                         <TableHead>Fluxo</TableHead>
+                                        <TableHead>Categoria</TableHead>
                                         <TableHead className="text-right">Valor</TableHead>
                                     </TableRow>
                                 </TableHeader>
@@ -64,6 +65,7 @@ const FinanceVisualization = ({ data }: RegisterFinanceProps) => {
                                             <TableCell className="font-medium">{format(new Date(finance.createdAt), 'dd/MM/yyyy')}</TableCell>
                                             <TableCell>{finance.name}</TableCell>
                                             <TableCell>{finance.type === 'revenue' ? 'Receita' : 'Despesa'}</TableCell>
+                                            <TableCell>{finance.category}</TableCell>
                                             <TableCell className="text-right">R${finance.value/100}</TableCell>
                                         </TableRow>
                                     )) }

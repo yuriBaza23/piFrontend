@@ -32,18 +32,18 @@ export default function About() {
         }
     }, [cmpId])
 
-    const getFinanceCategories = useCallback(async () => {
-        if (cmpId) {
-            const res = await api.get(`finance/company/categories/${cmpId}`);
-            setFinanceCategories(res.data)
-        }
-    }, [cmpId])
+    // const getFinanceCategories = useCallback(async () => {
+    //     if (cmpId) {
+    //         const res = await api.get(`finance/company/categories/${cmpId}`);
+    //         setFinanceCategories(res.data)
+    //     }
+    // }, [cmpId])
 
     useEffect(() => {
         getMyIds()
         getFinance()
-        getFinanceCategories()
-    }, [getMyIds, getFinance, getFinanceCategories])
+        // getFinanceCategories()
+    }, [getMyIds, getFinance])
 
 
     return (
@@ -60,7 +60,7 @@ export default function About() {
                 <Separator />
                 <div className='w-[calc(100vw-6em-4rem)] md:flex-row items-center justify-between mt-2 mx-auto'>
                     <Spacer x={4} />
-                    <MainTable />
+                    <MainTable companyId={cmpId}/>
                 </div>
             </div>
         </div>

@@ -9,6 +9,7 @@ import api from '../../../../lib/api';
 import { sidebarIncItems } from '../../../../lib/sidebarItems';
 import localApi from '../../../../lib/localApi';
 import { Boards } from '../../../../components/ui/boards';
+import MainTable from '../../../../components/tabela/MainTable';
 
 export default function Tasks({ params }: { params: { id: string } }) {
     const [company, setCompany] = useState<any>({})
@@ -75,7 +76,7 @@ export default function Tasks({ params }: { params: { id: string } }) {
             <div className="content">
                     <div>
                         <div className="w-[calc(100vw-6em-4rem)] flex flex-col md:flex-row items-center justify-between mt-2 mx-auto">
-                        <h1 className='mt-0 mb-2'>Gerenciamento de atividades {company.name}</h1>
+                        <h1 className='mt-0 mb-2'>Gerenciamento {company.name}</h1>
                         <div className='flex gap-4'>
                             <Button>Gerar relatório de atividades</Button>
                         </div>
@@ -83,7 +84,15 @@ export default function Tasks({ params }: { params: { id: string } }) {
                     <Separator />
                     <Spacer x={4} />
                     <div className="flex flex-col gap-10 overflow-y-auto overflow-x-hidden h-[calc(100vh-7rem)]">
-                        <Boards boards={boards} cards={cards} lists={lists} loading={loading}/>
+                        <div className='p-10'>
+                            <MainTable companyId={params.id}/>
+                        </div>
+                        <div className='p-10'>
+                            <caption className="py-4 w-[calc(100vw-12rem)] text-xl bg-[#26282A]">
+                                Projetos da empresa
+                            </caption>
+                            <Boards boards={boards} cards={cards} lists={lists} loading={loading}/>
+                        </div>
                     </div>
                 </div>
             </div>

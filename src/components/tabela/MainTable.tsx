@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
 import {
   Select,
   SelectContent,
@@ -8,7 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
-import { ArrowLeft, Minus, Plus } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import useMainTableData from "./useMainTableData";
 import {
   Media,
@@ -16,47 +16,36 @@ import {
   months,
   translateMedia,
   translateMonth,
-  yearData,
 } from "./types";
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-import { Label } from "../ui/label";
-import { Button } from "../ui/button";
 import useMainTableSellerData from "./useMainTableSellerData";
-import Testao from "./useMainTableDataTeste";
-import AddColDialog from "./AddColDialog";
-import UpdateColDialog from "./UpdateColDialog";
 
-export default function MainTable() {
-  const { colTypes, months, years, dataMatrix, resetData, changeSelectedYear } =
+interface IMainTableProps {
+  companyId: string;
+}
+
+export default function MainTable({ companyId }: IMainTableProps) {
+  const { colTypes, months, years, dataMatrix, resetData, changeSelectedYear, selectedYear } =
     useMainTableData();
 
   const {
-    sellerDataMatrix,
     changeSelectedMonth,
-    sellerColTypes,
-    selectedMonth,
     resetSellerData,
   } = useMainTableSellerData();
-
-  const {
-    changeCellValue,
-  } = Testao();
 
   const allColumns = Object.values(colTypes)
     .flat()
     .map((col: colTypes) => col.subType)
     .flat();
 
-  const colTypesLenghtArray = Object.values(colTypes).map(
-    (colType) => colType.length
-  ) as unknown as number[];
+  useEffect(() => {
+    if(companyId) resetData(companyId)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [companyId])
 
-  const [year, setYear] = useState(years[years.length - 1]);
   const [month, setMonth] = useState(undefined as string | undefined);
-  const [cellValue, setCellValue] = useState(0);
 
   return (
-    <div className="text-xs overflow-auto max-h-full max-w-full xl:text-sm">
+    <div className="text-xs max-h-full max-w-full xl:text-sm">
       <table className="table-auto">
         <caption className="relative py-4 text-xl bg-[#26282A]">
           {month && (
@@ -69,8 +58,8 @@ export default function MainTable() {
           )}
           Relatório financeiro{" "}
           {month
-            ? "de " + translateMonth(month as months) + " de " + year.toString()
-            : year.toString()}
+            ? "de " + translateMonth(month as months) + " de " + selectedYear!.toString()
+            : selectedYear!.toString()}
         </caption>
         <thead>
           <tr className="">
@@ -90,11 +79,11 @@ export default function MainTable() {
                     }
                     : (value) => {
                       changeSelectedYear ? changeSelectedYear(value) : null;
-                      setYear(value);
-                      resetData();
+                      // setYear(value);
+                      resetData(companyId);
                     }
                 }
-                value={month ? month : year.toString()}
+                value={month ? month : selectedYear!.toString()}
               >
                 <SelectTrigger className="color-t bg-[#101214]">
                   <SelectValue placeholder="Ano" />
@@ -136,8 +125,8 @@ export default function MainTable() {
                       {translateMedia(colType as Media)}
                       {!month ? (
                         <>
-                          <UpdateColDialog id={colType} />
-                          <AddColDialog id={colType} />
+                          {/* <UpdateColDialog id={colType} /> */}
+                          {/* <AddColDialog id={colType} /> */}
                         </>
                       ) : null}
                     </div>
@@ -179,65 +168,9 @@ export default function MainTable() {
                     return (
                       <td
                         key={index2}
-                        className={`border border-[#26282A] text-center w-full h-full ${data.isEditable
-                          ? "hover:bg-[#26282A] cursor-pointer"
-                          : ""
-                          }`}
+                        className={`border border-[#26282A] text-center w-full h-full`}
                       >
-                        {data.isEditable ? (
-                          <Popover>
-                            <PopoverTrigger asChild>
-                              <div
-                                className="w-full h-full py-2"
-                                onClick={() => {
-                                  setCellValue(data.value);
-                                }}
-                              >
-                                {data.value}
-                              </div>
-                            </PopoverTrigger>
-                            <PopoverContent className="flex justify-center w-fit flex-col gap-2">
-                              <Label htmlFor={`input${index2}`}>
-                                Editar valor da célula
-                              </Label>
-                              <div className="flex gap-4">
-                                <input
-                                  className="flex h-10 w-full text-black rounded-md border border-input bg-white px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                                  type="number"
-                                  value={cellValue}
-                                  onChange={(e) => setCellValue(Number(e.target.value))}
-                                />
-
-                                <Button
-                                  onClick={() => {
-                                    let sum = 0;
-                                    colTypesLenghtArray.map((colTypeLength, index3) => {
-                                      if (sum === -1) {
-                                        console.log("sum is -1");
-                                        return null;
-                                      }
-                                      if (index2 < sum + colTypeLength) {
-                                        changeCellValue(
-                                          year,
-                                          month as months,
-                                          Object.keys(colTypes)[index3] as Media,
-                                          allColumns[index2],
-                                          cellValue
-                                        );
-                                        return (sum = -1);
-                                      }
-                                      return (sum += colTypeLength);
-                                    });
-                                    resetSellerData();
-                                  }}
-                                >
-                                  Salvar
-                                </Button></div>
-                            </PopoverContent>
-                          </Popover>
-                        ) : (
-                          data.value
-                        )}
+                        {data.value}
                       </td>
                     );
                   })}

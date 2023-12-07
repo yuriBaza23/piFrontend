@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useToast } from "./use-toast";
 import api from "../../lib/api";
 import { LuListPlus } from "react-icons/lu"; 
+import useMainTableData from "../tabela/useMainTableData";
 
 interface RegisterFinanceProps {
   companyId?: string;
@@ -19,6 +20,8 @@ const RegisterFinance = ({ companyId, categories: cateoriesProp }: RegisterFinan
   const [newFinanceValue, setNewFinanceValue] = useState("");
   const [newFinanceType, setNewFinanceType] = useState<Finance>("revenue");
   const [newFinanceCategory, setNewFinanceCategory] = useState<string>("");
+  const { resetData } =
+    useMainTableData();
 
   const [isAddingNewCategory, setIsAddingNewCategory] = useState(false);
   const [newCategoryName, setNewCategoryName] = useState("");
@@ -26,11 +29,10 @@ const RegisterFinance = ({ companyId, categories: cateoriesProp }: RegisterFinan
   const defaultCategories: FinanceCategories = {
     revenue: new Set(["Receita recorrente", "Receita não recorrente"]),
     expense: new Set([
-      "Imposto", "Dedução", "RPAs e custo de serviço",
-      "Head count de TI", "Pessoal de TI",
-      "Softwares", "Outros gastos com TI", "Head count administrativo",
-      "Pessoal administrativo", "Coworking",
-      "Outros gastos administrativos"
+      "Imposto", "Deduções", "RPAs e custo de serviço", 
+      "Pessoal de TI", "Softwares", "Outros gastos com TI",
+      "Pessoal administrativo", "Coworking", "Outros gastos administrativos", 
+      "Outros"
     ]),
   };
 
@@ -75,20 +77,29 @@ const RegisterFinance = ({ companyId, categories: cateoriesProp }: RegisterFinan
       })
       return;
     }
-    const res = await api.post('finance', {
+
+    const body = {
       name: newFinanceTitle,
       finValue: newFinanceValue,
       type: newFinanceType,
-      finCategory: newFinanceCategory,
+      category: newFinanceCategory,
       companyId,
-    });
+    }
+    const res = await api.post('finance', body);
 
-    if (res.status === 200) {
+    if (res.status === 200 && res.data && res.data.error === false) {
       toast({
         title: "Finança registrada com sucesso",
         description: "Finança registrada com sucesso"
       })
+      resetData(companyId!);
       window.location.reload();
+    } else {
+      toast({
+        title: "Erro ao registrar finança",
+        description: "Erro ao registrar finança",
+        variant: "destructive"
+      })
     }
 
   };
@@ -157,10 +168,10 @@ const RegisterFinance = ({ companyId, categories: cateoriesProp }: RegisterFinan
                   {Array.from(categoriesState[newFinanceType]).map((cat: string) => (
                     <option key={cat} value={cat}>{cat}</option>
                   ))}
-                  <option value="add_new">Adicionar nova categoria</option>
+                  {/* <option value="add_new">Adicionar nova categoria</option> */}
                 </select>
               )}
-              {isAddingNewCategory && (
+              {/* {isAddingNewCategory && (
                 <div>
                   <h3 className="mb-1">Nova Categoria:</h3>
                   <div className="mb-2 w-full">
@@ -181,7 +192,7 @@ const RegisterFinance = ({ companyId, categories: cateoriesProp }: RegisterFinan
                     </div>
                   </div>
                 </div>
-              )}
+              )} */}
               <div className="flex justify-end">
                 <button type="submit" className="btn">
                   Salvar
