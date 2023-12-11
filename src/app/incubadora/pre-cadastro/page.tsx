@@ -94,10 +94,10 @@ export default function Pre_Cadastro() {
             <div className="shadow-lg p-5 rounded-lg bg-login">
                 <div className="login-logo">
                     <Image
-                        src="https://i.imgur.com/HI8Xaw5.png"
-                        width={80}
-                        height={50}
-                        className="sidebar__logo"
+                        src="/img/logo.svg"
+                        width={100}
+                        height={100}
+                        // className="sidebar__logo"
                         alt="logo" />
                 </div>
                 <h1 className="text-xl font-bold my-4">Cadastro de empresa</h1>

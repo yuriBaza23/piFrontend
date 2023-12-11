@@ -9,7 +9,7 @@ interface ModalProps {
 const Modal: React.FC<ModalProps> = ({ modalOpen, setModalOpen, children }) => {
   return (
     <div className={`modal ${modalOpen ? "modal-open" : ""}`}>
-      <div className="modal-box">
+      <div className="modal-box !max-w-[60rem]">
         <form method="dialog">
           <button
             onClick={() => setModalOpen(false)}

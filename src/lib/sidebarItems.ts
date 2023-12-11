@@ -1,4 +1,4 @@
-import { BsBuildingAdd, BsHouseDoor, BsClipboardX, BsJournalBookmark } from "react-icons/bs";
+import { BsBuildingAdd, BsHouseDoor, BsClipboardX, BsJournalBookmark, BsBank } from "react-icons/bs";
 
 export const sidebarIncItems = [
   {
@@ -29,4 +29,9 @@ export const sidebarCmpItems = [
     href: "/empresa/projetos",
     icon: BsJournalBookmark,
   },
+  {
+    name: "Financeiro",
+    href: "/empresa/financas",
+    icon: BsBank
+  }
 ];

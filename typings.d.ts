@@ -20,3 +20,5 @@ interface Todo {
 }
 
 type Finance = "expense" | "revenue";
+
+type FinanceCategories = Record<Finance, Set<string>>;
