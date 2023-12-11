@@ -91,9 +91,9 @@ export default function Tasks({ params }: { params: { id: string } }) {
             <div className="content">
                     <div>
                         <div className="w-[calc(100vw-6em-4rem)] flex flex-col md:flex-row items-center justify-between mt-2 mx-auto">
-                        <h1 className='mt-0 mb-2'>Gerenciamento {company.name}</h1>
+                        <h1 className='mt-0 mb-2'>Gerenciamento {company?.name}</h1>
                         <div className='flex gap-4'>
-                            <Button>Gerar relatório de atividades</Button>
+                            {/* <Button>Gerar relatório de atividades</Button> */}
                         </div>
                     </div>
                     <Separator />
